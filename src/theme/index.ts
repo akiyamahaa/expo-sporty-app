@@ -6,56 +6,64 @@ import { extendTheme } from "native-base";
 
 export const newColorTheme = {
   primary: {
-    Darker: "#311902",
-    Dark: "#984D07",
-    Main: "#F58216",
-    Lighter: "#FDE5CE",
+    600: "#E6F853",
   },
-  secondary: {
-    Darker: "#311902",
-    Dark: "#984D07",
-    Main: "#F58216",
-    Lighter: "#FDE5CE",
+  muted: {
+    400: "#A3A3A3",
+    700: "#404040",
+    900: "#171717",
   },
-  grey: {
-    50: "#F2F2F2",
-    100: "#E6E6E6",
-    200: "#CCCCCC",
-    300: "#B3B3B3",
-    400: "#999999",
-    500: "#808080",
-    600: "#666666",
-    700: "#4D4D4D",
-    800: "#333333",
-    900: "#1A1A1A",
+  text: {
+    400: "#A3A3A3",
+    600: "#525252",
+    900: "#171717",
+  },
+  error: {
+    600: "#DC2626",
   },
 };
 
 const appTheme = extendTheme({
   colors: newColorTheme,
   fontConfig: {
-    Quicksand: {
+    Roboto: {
+      100: {
+        normal: "Roboto_100Thin",
+        italic: "Roboto_100Thin_Italic",
+      },
       300: {
-        normal: "Quicksand_300Light",
+        normal: "Roboto_300Light",
+        italic: "Roboto_300Light_Italic",
       },
       400: {
-        normal: "Quicksand_400Regular",
+        normal: "Roboto_400Regular",
+        italic: "Roboto_400Regular_Italic",
       },
       500: {
-        normal: "Quicksand_400Regular",
-      },
-      600: {
-        normal: "Quicksand_600SemiBold",
+        normal: "Roboto_500Medium",
+        italic: "Roboto_500Medium_Italic",
       },
       700: {
-        normal: "Quicksand_700Bold",
+        normal: "Roboto_700Bold",
+        italic: "Roboto_700Bold_Italic",
+      },
+      900: {
+        normal: "Roboto_900Black",
+        italic: "Roboto_900Black_Italic",
       },
     },
   },
   fonts: {
-    heading: "Quicksand",
-    body: "Quicksand",
-    mono: "Quicksand",
+    heading: "Roboto",
+    body: "Roboto",
+    mono: "Roboto",
+  },
+  components: {
+    Text: {
+      baseStyle: {
+        color: "#fff",
+      },
+    },
   },
 });
 

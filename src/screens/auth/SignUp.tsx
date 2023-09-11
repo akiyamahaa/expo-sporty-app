@@ -6,7 +6,7 @@ import CustomButton from "../../components/CustomButton";
 
 type Props = {};
 
-const Login = (props: Props) => {
+const SignUp = (props: Props) => {
   const handleForgetPassScreen = () => {};
   return (
     <Box
@@ -22,38 +22,23 @@ const Login = (props: Props) => {
           placeholder="Nhập số điện thoại/Email"
         />
         <InputLabel
-          label="Mật khẩu"
+          label="Nhập mật khẩu"
           placeholder="Nhập mật khẩu"
           showIcon={true}
+          secureTextEntry
         />
-        <HStack justifyContent={"space-between"} mb={6}>
-          <HStack space={2}>
-            <Checkbox
-              value="test"
-              accessibilityLabel="This is a dummy checkbox"
-              borderRadius={100}
-              backgroundColor={"transparent"}
-            />
-            <Text fontWeight={400} fontSize={12} color={"text.600"}>
-              Ghi nhớ đăng nhập
-            </Text>
-          </HStack>
-          <TouchableOpacity onPress={handleForgetPassScreen}>
-            <Text
-              fontSize={12}
-              color={"text.600"}
-              textDecorationLine={"underline"}
-            >
-              Quên mật khẩu?
-            </Text>
-          </TouchableOpacity>
-        </HStack>
-        <Box>
-          <CustomButton btnText={"Đăng nhập"} />
+        <InputLabel
+          label="Nhập lại mật khẩu"
+          placeholder="Nhập lại mật khẩu"
+          showIcon={true}
+          secureTextEntry
+        />
+        <Box mt={8}>
+          <CustomButton btnText={"Đăng ký"} />
         </Box>
       </VStack>
       <HStack mb={16} space={1}>
-        <Text fontWeight={400}>Bạn chưa có tài khoản?</Text>
+        <Text fontWeight={400}>Bạn đã có tài khoản?</Text>
         <TouchableOpacity>
           <Text
             fontWeight={500}
@@ -61,7 +46,7 @@ const Login = (props: Props) => {
             color={"primary.600"}
             textDecorationLine={"underline"}
           >
-            Đăng ký
+            Đăng nhập
           </Text>
         </TouchableOpacity>
       </HStack>
@@ -69,6 +54,6 @@ const Login = (props: Props) => {
   );
 };
 
-export default Login;
+export default SignUp;
 
 const styles = StyleSheet.create({});
