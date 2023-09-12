@@ -22,6 +22,8 @@ const OTPScreen = (props: Props) => {
   const { colors } = useTheme();
   const [OTP, setOTP] = useState("");
 
+  const handleBtnBack=()=>{}
+
   async function verifyOTP() {
     try {
       dispatch(setLoading());
@@ -35,7 +37,10 @@ const OTPScreen = (props: Props) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Box flex={1} bgColor={"muted.900"}>
-        <Header.BasicHeader />
+        <Header.BasicHeader
+          title="Quên mật khẩu"
+          handleBtnBack={handleBtnBack}
+        />
         <VStack px={6} mt={24} alignItems={"center"}>
           <VStack alignItems={"center"}>
             <Text fontSize={16} fontWeight={400} color="white">

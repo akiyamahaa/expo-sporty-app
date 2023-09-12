@@ -58,7 +58,7 @@ type Props = {
 
 const BasicHeader = (props: Props) => {
   // set when have user
-  const user = true;
+  const user = false;
   const {
     title,
     handleBtnBack = null,

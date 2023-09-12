@@ -25,13 +25,13 @@ const SignUp = (props: Props) => {
           label="Nhập mật khẩu"
           placeholder="Nhập mật khẩu"
           showIcon={true}
-          secureTextEntry
+          secureTextEntry={true}
         />
         <InputLabel
           label="Nhập lại mật khẩu"
           placeholder="Nhập lại mật khẩu"
           showIcon={true}
-          secureTextEntry
+          secureTextEntry={true}
         />
         <Box mt={8}>
           <CustomButton btnText={"Đăng ký"} />

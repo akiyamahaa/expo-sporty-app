@@ -29,9 +29,10 @@ const InputLabel = (props: Props) => {
         width={"100%"}
         color="text.50"
         height={10}
+        fontSize={16}
         borderRadius={100}
         borderColor={"muted.700"}
-        secureTextEntry={secureTextEntry && show}
+        secureTextEntry={secureTextEntry && !show}
         placeholder={placeholder}
         placeholderTextColor={colors.text[600]}
         InputRightElement={
@@ -40,9 +41,9 @@ const InputLabel = (props: Props) => {
               <Icon
                 as={
                   show ? (
-                    <EyeSlash size="24" color={colors.muted[400]} />
-                  ) : (
                     <Eye size="24" color={colors.muted[400]} />
+                  ) : (
+                    <EyeSlash size="24" color={colors.muted[400]} />
                   )
                 }
                 size={5}

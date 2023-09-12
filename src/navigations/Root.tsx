@@ -35,7 +35,7 @@ const Root = () => {
         paddingBottom: 8,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-        backgroundColor: user ? colors.muted[800] : colors.muted[900],
+        backgroundColor:  false ? colors.muted[800] : colors.muted[900],
         flex: 1,
       }}
     >
@@ -48,6 +48,7 @@ const Root = () => {
             headerShown: false,
           }}
         >
+          {true && <Stack.Screen name="Auth" component={AuthStack} />}
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="Feedback" component={Feedback} />
           <Stack.Screen name="Setting" component={Setting} />
@@ -55,7 +56,6 @@ const Root = () => {
           <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
           {user && <Stack.Screen name="TabNav" component={TabNav} />}
           <Stack.Screen name="CreateMenu" component={CreateMenu} />
-          {!user && <Stack.Screen name="Auth" component={AuthStack} />}
         </Stack.Navigator>
       </NavigationContainer>
     </Box>
