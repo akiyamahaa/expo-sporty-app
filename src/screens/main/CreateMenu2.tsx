@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import React from "react";
 import { Box, ScrollView, VStack } from "native-base";
-import Header from "../components/Header";
-import FoodMenuCard from "../components/FoodMenuCard";
+import Header from "../../components/Header";
+import FoodMenuCard from "../../components/FoodMenuCard";
 
 type Props = {};
 

@@ -19,6 +19,9 @@ export type AuthStackParams = {
   SignUp: undefined;
   Phone: undefined;
   OTP: undefined;
-  ChangePassword: undefined;
-  PostAuth: undefined;
+  ForgotPassword: undefined;
+  PostAuth: {
+    phone: string;
+    password: string;
+  };
 };

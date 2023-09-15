@@ -6,11 +6,11 @@ import {
   Activity,
   Home3 as HomeIcon,
 } from "iconsax-react-native";
-import Home from "../screens/Home";
 import { useTheme } from "native-base";
 import { BottomTabsParams } from "./config";
-import Profile from "../screens/Profile";
-import Menu from "../screens/Menu";
+import Home from "../screens/main/Home";
+import Profile from "../screens/main/Profile";
+import Menu from "../screens/main/Menu";
 // import { BottomTabsParams } from "./types";
 
 const Tab = createBottomTabNavigator<BottomTabsParams>();

@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 import React from "react";
 import { Box, HStack, ScrollView, Text, VStack } from "native-base";
-import Header from "../components/Header";
-import CustomButton from "../components/CustomButton";
-import MenuDayCard from "../components/MenuDayCard";
+import Header from "../../components/Header";
+import CustomButton from "../../components/CustomButton";
+import MenuDayCard from "../../components/MenuDayCard";
 
 type Props = {};
 

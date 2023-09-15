@@ -12,6 +12,9 @@ const ChangePassword = (props: Props) => {
   const [showModal, setShowModal] = useState(false);
   const handleBtnBack = () => {};
 
+  const handleBtn = () => {
+  }
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Box flex={1} bgColor={"muted.900"}>
@@ -42,7 +45,7 @@ const ChangePassword = (props: Props) => {
             />
           </VStack>
           <Box px={6}>
-            <CustomButton btnText="Đổi mật khẩu" />
+            <CustomButton btnText="Đổi mật khẩu" handleBtn={handleBtn} />
           </Box>
         </VStack>
       </Box>

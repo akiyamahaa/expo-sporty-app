@@ -9,7 +9,7 @@ import {
   VStack,
   useTheme,
 } from "native-base";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 type Props = {};
 type BoxCaloriesProps = {

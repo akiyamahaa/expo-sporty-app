@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 import React from "react";
 import { Box, Center, Text, VStack } from "native-base";
-import Header from "../components/Header";
-import InputLabel from "../components/InputLabel";
-import CustomButton from "../components/CustomButton";
+import Header from "../../components/Header";
+import InputLabel from "../../components/InputLabel";
+import CustomButton from "../../components/CustomButton";
 
 type Props = {};
 

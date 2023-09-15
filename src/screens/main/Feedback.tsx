@@ -1,13 +1,15 @@
 import { StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Box, Text, TextArea, VStack, useTheme } from "native-base";
-import Header from "../components/Header";
-import CustomButton from "../components/CustomButton";
+import Header from "../../components/Header";
+import CustomButton from "../../components/CustomButton";
+
 
 type Props = {};
 
 const Feedback = (props: Props) => {
   const { colors } = useTheme();
+
   const handleBtnBack = () => {};
   return (
     <Box flex={1} bgColor={"muted.900"}>

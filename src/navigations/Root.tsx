@@ -11,22 +11,21 @@ import { StatusBar } from "expo-status-bar";
 import { RootState, useAppDispatch, useAppSelector } from "../store";
 import AuthStack from "./AuthStack";
 import TabNav from "./TabNav";
-import CreateMenu from "../screens/CreateMenu";
-import CreateMenu2 from "../screens/CreateMenu2";
-import BMI from "../screens/BMI";
-import Setting from "../screens/Setting";
-import Feedback from "../screens/Feedback";
-import About from "../screens/About";
+import About from "../screens/main/About";
+import Feedback from "../screens/main/Feedback";
+import { Setting } from "iconsax-react-native";
+import BMI from "../screens/main/BMI";
+import CreateMenu2 from "../screens/main/CreateMenu2";
+import CreateMenu from "../screens/main/CreateMenu";
 
 const Stack = createNativeStackNavigator<any>();
 
 const Root = () => {
-  // const user = useAppSelector((state: RootState) => state.user.user);
   const dispatch = useAppDispatch();
+
+  const user = useAppSelector((state: RootState) => state.user.user);
   const insets = useSafeAreaInsets();
   const { colors } = useTheme();
-
-  const user = true;
 
   return (
     <Box
@@ -35,7 +34,7 @@ const Root = () => {
         paddingBottom: 8,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-        backgroundColor:  false ? colors.muted[800] : colors.muted[900],
+        backgroundColor: false ? colors.muted[800] : colors.muted[900],
         flex: 1,
       }}
     >
@@ -48,13 +47,13 @@ const Root = () => {
             headerShown: false,
           }}
         >
-          {true && <Stack.Screen name="Auth" component={AuthStack} />}
+          {!user && <Stack.Screen name="Auth" component={AuthStack} />}
+          {user && <Stack.Screen name="TabNav" component={TabNav} />}
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="Feedback" component={Feedback} />
           <Stack.Screen name="Setting" component={Setting} />
           <Stack.Screen name="BMI" component={BMI} />
           <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
-          {user && <Stack.Screen name="TabNav" component={TabNav} />}
           <Stack.Screen name="CreateMenu" component={CreateMenu} />
         </Stack.Navigator>
       </NavigationContainer>

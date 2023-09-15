@@ -17,7 +17,7 @@ type Props = {
 } & IInputProps;
 
 const InputLabel = (props: Props) => {
-  const { label, secureTextEntry, placeholder, showIcon = false } = props;
+  const { label, secureTextEntry, showIcon = false, ...inputProps } = props;
   const [show, setShow] = useState(false);
   const { colors } = useTheme();
   return (
@@ -33,8 +33,8 @@ const InputLabel = (props: Props) => {
         borderRadius={100}
         borderColor={"muted.700"}
         secureTextEntry={secureTextEntry && !show}
-        placeholder={placeholder}
         placeholderTextColor={colors.text[600]}
+        {...inputProps}
         InputRightElement={
           showIcon ? (
             <Pressable onPress={() => setShow(!show)}>

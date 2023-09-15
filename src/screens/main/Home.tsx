@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 import React from "react";
 import { Box, HStack, ScrollView, Text, VStack } from "native-base";
-import Header from "../components/Header";
-import CustomButton from "../components/CustomButton";
-import FoodCard from "../components/FoodCard";
+import Header from "../../components/Header";
+import CustomButton from "../../components/CustomButton";
+import FoodCard from "../../components/FoodCard";
 
 type Props = {};
 
@@ -34,7 +34,7 @@ const Home = (props: Props) => {
           <VStack flex={1} space={4}>
             <FoodCard
               foodInfo={{
-                image: require("../../assets/food/image1.png"),
+                image: require("../../../assets/food/image1.png"),
                 name: "Cuộn bơ, cá hồi (đồ ăn Nhật Bản)",
                 quantity: 100,
                 calories: 136.2,
@@ -42,7 +42,7 @@ const Home = (props: Props) => {
             />
             <FoodCard
               foodInfo={{
-                image: require("../../assets/food/image1.png"),
+                image: require("../../../assets/food/image1.png"),
                 name: "Cuộn bơ, cá hồi (đồ ăn Nhật Bản)",
                 quantity: 100,
                 calories: 136.2,
@@ -50,7 +50,7 @@ const Home = (props: Props) => {
             />
             <FoodCard
               foodInfo={{
-                image: require("../../assets/food/image1.png"),
+                image: require("../../../assets/food/image1.png"),
                 name: "Cuộn bơ, cá hồi (đồ ăn Nhật Bản)",
                 quantity: 100,
                 calories: 136.2,
@@ -58,7 +58,7 @@ const Home = (props: Props) => {
             />
             <FoodCard
               foodInfo={{
-                image: require("../../assets/food/image1.png"),
+                image: require("../../../assets/food/image1.png"),
                 name: "Cuộn bơ, cá hồi (đồ ăn Nhật Bản)",
                 quantity: 100,
                 calories: 136.2,
@@ -66,7 +66,7 @@ const Home = (props: Props) => {
             />
             <FoodCard
               foodInfo={{
-                image: require("../../assets/food/image1.png"),
+                image: require("../../../assets/food/image1.png"),
                 name: "Cuộn bơ, cá hồi (đồ ăn Nhật Bản)",
                 quantity: 100,
                 calories: 136.2,
@@ -74,7 +74,7 @@ const Home = (props: Props) => {
             />
             <FoodCard
               foodInfo={{
-                image: require("../../assets/food/image1.png"),
+                image: require("../../../assets/food/image1.png"),
                 name: "Cuộn bơ, cá hồi (đồ ăn Nhật Bản)",
                 quantity: 100,
                 calories: 136.2,

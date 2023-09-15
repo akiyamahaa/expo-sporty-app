@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native";
 import React from "react";
 import { Box, HStack, Switch, Text, VStack, useTheme } from "native-base";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import {
   Component,
   InfoCircle,
   Notification,
   Profile,
 } from "iconsax-react-native";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../../components/CustomButton";
 
 type Props = {};
 

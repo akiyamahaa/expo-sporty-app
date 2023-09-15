@@ -1,9 +1,10 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Box, Center, HStack, Text } from "native-base";
+import { EGender } from "../type/user";
 
 type PickGenderProps = {
-  gender: string;
+  gender: any;
   setGender: any;
 };
 
