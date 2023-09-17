@@ -9,7 +9,7 @@ import { useAppDispatch } from "../../store";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { AuthStackParams, RootStackParams } from "../../navigations/config";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
-import { fillProfileSchema, onInputChange } from "../utils/forms";
+import { fillProfileSchema, onInputChange } from "../../utils/forms";
 import { doc, setDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
 import { setUser } from "../../store/user.reducer";

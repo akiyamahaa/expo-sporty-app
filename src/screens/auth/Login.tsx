@@ -4,7 +4,7 @@ import { Box, Checkbox, HStack, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { AuthStackParams } from "../../navigations/config";
+import { AuthStackParams, RootStackParams } from "../../navigations/config";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
 import { setError } from "../../store/error.reducer";
 import { doc, getDoc } from "firebase/firestore";
@@ -13,12 +13,15 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../store/user.reducer";
 import { IUserProfile } from "../../type/user";
 
-type Props = {} & NativeStackScreenProps<AuthStackParams, "Login">;
+type Props = {} & NativeStackScreenProps<
+  AuthStackParams & RootStackParams,
+  "Login"
+>;
 
 const Login = (props: Props) => {
   const { navigation } = props;
   const dispatch = useDispatch();
-  const [phone, setPhone] = useState("0914728469");
+  const [phone, setPhone] = useState("0914724869");
   const [password, setPassword] = useState("12345678");
 
   const onForgotPassword = () => {
@@ -77,6 +80,7 @@ const Login = (props: Props) => {
           value={password}
           onChangeText={setPassword}
           showIcon={true}
+          secureTextEntry={true}
         />
         <HStack justifyContent={"space-between"} mb={6}>
           <HStack space={2}>

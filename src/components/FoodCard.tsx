@@ -3,14 +3,10 @@ import React from "react";
 import { Box, HStack, Text, VStack, useTheme } from "native-base";
 import { Image } from "expo-image";
 import { ArrowCircleRight2 } from "iconsax-react-native";
+import { IFood } from "../type/common";
 
 type Props = {
-  foodInfo: {
-    image: string;
-    name: string;
-    quantity: number;
-    calories: number;
-  };
+  foodInfo: IFood;
   handleBtnNext?: any;
 };
 
@@ -22,7 +18,7 @@ const FoodCard = (props: Props) => {
     <Box>
       <HStack alignItems={"center"} justifyContent={"space-between"}>
         <Image
-          source={foodInfo.image}
+          source={{ uri: foodInfo.image }}
           style={{ width: 96, height: 96, borderRadius: 16 }}
         />
         <VStack mx={4} flex={1}>

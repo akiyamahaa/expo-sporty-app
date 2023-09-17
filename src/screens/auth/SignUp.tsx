@@ -5,7 +5,7 @@ import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { AuthStackParams } from "../../navigations/config";
-import { onInputChange, signUpSchema } from "../utils/forms";
+import { onInputChange, signUpSchema } from "../../utils/forms";
 import { useDispatch } from "react-redux";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
 import { setError } from "../../store/error.reducer";

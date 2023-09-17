@@ -12,8 +12,7 @@ const ChangePassword = (props: Props) => {
   const [showModal, setShowModal] = useState(false);
   const handleBtnBack = () => {};
 
-  const handleBtn = () => {
-  }
+  const handleBtn = () => {};
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>

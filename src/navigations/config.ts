@@ -4,7 +4,10 @@ export type RootStackParams = {
   Auth?: NavigatorScreenParams<AuthStackParams>;
   TabNav?: undefined;
   CreateMenu: undefined;
-  CreateMenu2: undefined;
+  CreateMenu2: {
+    dayId: string;
+    sessionId: string;
+  };
   BMI: undefined;
   Setting: undefined;
 };

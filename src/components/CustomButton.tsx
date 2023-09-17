@@ -1,17 +1,18 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { Box, Text } from "native-base";
+import { Box, IButtonProps, Text } from "native-base";
 
 type Props = {
   btnText: string;
   active?: boolean;
-  handleBtn?: () => {};
-};
+  handleBtn?: any;
+  disabled?: boolean
+} & IButtonProps;
 
 const CustomButton = (props: Props) => {
-  const { btnText, handleBtn, active = true } = props;
+  const { btnText, handleBtn, active = true, disabled = false } = props;
   return (
-    <TouchableOpacity onPress={handleBtn}>
+    <TouchableOpacity onPress={handleBtn} disabled={disabled}>
       <Box
         width="100%"
         borderRadius={100}

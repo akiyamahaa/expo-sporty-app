@@ -4,6 +4,7 @@ import { Box, HStack, Icon, Input, Text, useTheme } from "native-base";
 import { Add, ArrowLeft2, SearchNormal, Setting2 } from "iconsax-react-native";
 
 const HomeHeader = ({ name = "Jack 5M", handleSetting = null }: any) => {
+ 
   return (
     <Box bgColor={"muted.800"} px={4} py={2}>
       <HStack alignItems={"center"} justifyContent={"space-between"}>
@@ -86,7 +87,7 @@ const BasicHeader = (props: Props) => {
           </TouchableOpacity>
         )}
         {handleDone && (
-          <TouchableOpacity onPress={handleAdd}>
+          <TouchableOpacity onPress={handleDone}>
             <Text fontSize={16} fontWeight={500}>
               Xong
             </Text>

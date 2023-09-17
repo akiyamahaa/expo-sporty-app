@@ -12,6 +12,7 @@ const store = configureStore({
     user: userReducer,
   },
 });
+// TODO: Make foodReducer to reuse 
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

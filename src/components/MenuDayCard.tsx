@@ -3,17 +3,22 @@ import React from "react";
 import { Box, HStack, Text, VStack, useTheme } from "native-base";
 import { Edit2 } from "iconsax-react-native";
 import FoodMenuCard from "./FoodMenuCard";
+import { IMenu } from "../type/common";
 
-type Props = {};
+type Props = {
+  objectListMenu: IMenu;
+};
 
 const MenuDayCard = (props: Props) => {
+  const { objectListMenu } = props;
   const { colors } = useTheme();
+  console.log("🚀 ~ file: MenuDayCard.tsx:14 ~ MenuDayCard ~ objectListMenu:", objectListMenu)
   return (
     <VStack>
       <HStack justifyContent={"space-between"} mb={1}>
         <Box>
           <Text fontWeight={400} fontSize={16}>
-            Thứ 2
+            Bữa sáng
           </Text>
         </Box>
         <TouchableOpacity>
@@ -21,9 +26,9 @@ const MenuDayCard = (props: Props) => {
         </TouchableOpacity>
       </HStack>
       <VStack space={2}>
+        {/* <FoodMenuCard  handleRemove={() => {}} />
         <FoodMenuCard handleRemove={() => {}} />
-        <FoodMenuCard handleRemove={() => {}} />
-        <FoodMenuCard handleRemove={() => {}} />
+        <FoodMenuCard handleRemove={() => {}} /> */}
       </VStack>
     </VStack>
   );
