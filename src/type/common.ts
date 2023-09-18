@@ -28,10 +28,15 @@ export interface INews {
   content: Array<IContent>;
 }
 
-export interface ISession {
-  [sessionId: string]: {
-    [foodId: string]: number; // quantity
+export interface IFoodSession {
+  [foodId: string]: {
+    foodInfo: IFood;
+    quantity: number;
   };
+}
+
+export interface ISession {
+  [sessionId: string]: IFoodSession;
 }
 
 export interface IMenu {

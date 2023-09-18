@@ -9,24 +9,36 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { doc, getDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
 import { convertDaytoName } from "../../utils/forms";
-import { IMenu } from "../../type/common";
+import { ISession } from "../../type/common";
+import { useAppDispatch } from "../../store";
+import { removeLoading, setLoading } from "../../store/loading.reducer";
 
 type Props = {} & NativeStackScreenProps<RootStackParams>;
 const dayGroup = ["0", "1", "2", "3", "4", "5", "6"];
 const Menu = (props: Props) => {
   const { navigation } = props;
+  const dispatch = useAppDispatch();
   const [dayId, setDayId] = useState("1");
-  const [listMenu, setListMenu] = useState<IMenu>({});
+  const [listSession, setListSession] = useState<ISession>({});
   const handleBtnAdd = () => {
     navigation.navigate("CreateMenu");
   };
   const handleSearch = () => {};
 
   const handleGetMenu = async () => {
-    const docRef = doc(firebaseDb, "menus", dayId);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      setListMenu(docSnap.data());
+    try {
+      dispatch(setLoading());
+      const docRef = doc(firebaseDb, "menus", dayId);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setListSession(docSnap.data());
+      } else {
+        setListSession({});
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      dispatch(removeLoading());
     }
   };
 
@@ -56,8 +68,8 @@ const Menu = (props: Props) => {
           </HStack>
         </ScrollView>
         <ScrollView>
-          <VStack flex={1} space={6}>
-            <MenuDayCard objectListMenu={listMenu} />
+          <VStack flex={1} mt={4}>
+            <MenuDayCard objectListMenu={listSession} dayId={dayId} />
           </VStack>
         </ScrollView>
       </VStack>

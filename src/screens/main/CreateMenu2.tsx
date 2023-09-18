@@ -14,43 +14,74 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
-import { IFood, IMenu } from "../../type/common";
+import { IFood, IFoodSession, ISession } from "../../type/common";
+import { useAppDispatch } from "../../store";
+import { removeLoading, setLoading } from "../../store/loading.reducer";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "CreateMenu2">;
-
-interface IFoodMenu {
-  [foodId: string]: number;
-}
 
 const CreateMenu2 = (props: Props) => {
   const { navigation, route } = props;
   const { dayId, sessionId } = route.params;
-  console.log("🚀 ~  dayId:", dayId, sessionId);
+  const dispatch = useAppDispatch();
   const [listFood, setListFood] = useState<IFood[]>([]);
-  const [foodMenu, setFoodMenu] = useState<IFoodMenu[] | null | any>(null);
+  const [foodMenu, setFoodMenu] = useState<IFoodSession>({});
   // TODO: Get history menu to apply value to food quantity
 
   const fetchAllFood = async () => {
-    const queryFood = await getDocs(collection(firebaseDb, "foods"));
-    const foods: IFood[] = [];
-    queryFood.forEach((doc: any) => {
-      foods.push({ ...doc.data() });
-    });
-    setListFood(foods);
+    try {
+      dispatch(setLoading());
+      const queryFood = await getDocs(collection(firebaseDb, "foods"));
+      const foods: IFood[] = [];
+      queryFood.forEach((doc: any) => {
+        foods.push({ ...doc.data() });
+      });
+      setListFood(foods);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      dispatch(removeLoading());
+    }
+  };
+
+  const handleGetFoodSession = async () => {
+    try {
+      dispatch(setLoading());
+      const docRef = doc(firebaseDb, "menus", dayId);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const objSession = docSnap.data();
+        const objFood = objSession[sessionId];
+        console.log(
+          "🚀 ~ file: CreateMenu2.tsx:55 ~ handleGetFoodSession ~ objFood:",
+          objFood
+        );
+        setFoodMenu(objFood);
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      dispatch(removeLoading());
+    }
   };
 
   useEffect(() => {
+    handleGetFoodSession();
     fetchAllFood();
   }, []);
 
-  const handleFoodToMenu = (foodId: string, quantity: number, foodInfo: IFood) => {
+  const handleFoodToMenu = (
+    foodId: string,
+    quantity: number,
+    foodInfo: IFood
+  ) => {
     let newListFood: any = {};
     // TODO: remove food data, just save food Id
     newListFood = {
       ...foodMenu,
       [foodId]: {
         foodInfo,
-        quantity
+        quantity,
       },
     };
     if (newListFood[foodId].quantity == 0) {
@@ -76,7 +107,7 @@ const CreateMenu2 = (props: Props) => {
           [sessionId]: foodMenu,
         });
       } else {
-        const menuData: IMenu = {
+        const menuData: ISession = {
           [sessionId]: foodMenu,
         };
         await setDoc(menuDocRef, menuData);
@@ -99,7 +130,14 @@ const CreateMenu2 = (props: Props) => {
         <VStack space={4} py={4} px={6}>
           {listFood.map((food) => (
             <Box key={food.id}>
-              <FoodMenuCard foodInfo={food} handleAdd={handleFoodToMenu} />
+              <FoodMenuCard
+                foodInfo={food}
+                handleAdd={handleFoodToMenu}
+                isEdit={true}
+                numFood={
+                  foodMenu[food.id as any] && foodMenu[food.id as any].quantity
+                }
+              />
             </Box>
           ))}
         </VStack>

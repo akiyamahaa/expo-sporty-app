@@ -59,3 +59,17 @@ export const convertDaytoName = (dayId: string) => {
       return "";
   }
 };
+export const convertSessionToName = (dayId: string) => {
+  switch (dayId) {
+    case "0":
+      return "Bữa sáng";
+    case "1":
+      return "Bữa trưa";
+    case "2":
+      return "Bữa tối";
+    case "3":
+      return "Bữa phụ";
+    default:
+      return "";
+  }
+};

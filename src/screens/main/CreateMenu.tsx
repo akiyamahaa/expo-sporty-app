@@ -21,9 +21,9 @@ const CreateMenu = (props: Props) => {
   };
 
   const handleNext = () => {
-    navigation.navigate("CreateMenu2",{
+    navigation.navigate("CreateMenu2", {
       dayId: day,
-      sessionId: session
+      sessionId: session,
     });
   };
   return (
@@ -50,6 +50,7 @@ const CreateMenu = (props: Props) => {
               btnText="Tiếp tục"
               handleBtn={handleNext}
               disabled={!Boolean(day) || !Boolean(session)}
+              active={Boolean(day) && Boolean(session)}
             />
           </Box>
         </VStack>

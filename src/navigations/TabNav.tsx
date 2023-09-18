@@ -31,6 +31,7 @@ const TabNav = () => {
           paddingTop: 12,
         },
       }}
+      initialRouteName="Home"
     >
       <Tab.Screen
         name="Home"

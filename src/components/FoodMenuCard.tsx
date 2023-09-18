@@ -10,18 +10,24 @@ import {
 import { IFood } from "../type/common";
 
 type Props = {
-  handleRemove?: any;
   handleAdd?: any;
   foodInfo: IFood;
+  numFood?: number;
+  isEdit?: boolean;
 };
 
 const FoodMenuCard = (props: Props) => {
   const { colors } = useTheme();
-  const { handleRemove, handleAdd, foodInfo } = props;
-  const [quantity, setQuantity] = useState(0);
+  const { handleAdd, foodInfo, numFood, isEdit = false } = props;
+  const [quantity, setQuantity] = useState(numFood || 0);
+
+  const isDisabledLeft = quantity == 0 || !isEdit;
+  const isDisabledRight = !isEdit;
 
   useEffect(() => {
-    handleAdd(foodInfo.id, quantity, foodInfo);
+    if (handleAdd) {
+      handleAdd(foodInfo.id, quantity, foodInfo);
+    }
   }, [quantity]);
 
   return (
@@ -42,21 +48,27 @@ const FoodMenuCard = (props: Props) => {
         </Text>
       </Box>
       <Box>
-        {handleRemove && <CloseCircle size="20" color={colors.muted[500]} />}
-        {handleAdd && (
-          <HStack space={2} alignItems={"center"}>
-            <TouchableOpacity
-              onPress={() => setQuantity(quantity - 1)}
-              disabled={quantity == 0}
-            >
-              <ArrowCircleLeft2 size="24" color={colors.muted[500]} />
-            </TouchableOpacity>
-            <Text fontSize={18}>{quantity}</Text>
-            <TouchableOpacity onPress={() => setQuantity(quantity + 1)}>
-              <ArrowCircleRight2 size="24" color={colors.muted[500]} />
-            </TouchableOpacity>
-          </HStack>
-        )}
+        <HStack space={2} alignItems={"center"}>
+          <TouchableOpacity
+            onPress={() => setQuantity(quantity - 1)}
+            disabled={isDisabledLeft}
+          >
+            <ArrowCircleLeft2
+              size="24"
+              color={isDisabledLeft ? colors.muted[500] : colors.primary[600]}
+            />
+          </TouchableOpacity>
+          <Text fontSize={18}>{quantity}</Text>
+          <TouchableOpacity
+            onPress={() => setQuantity(quantity + 1)}
+            disabled={isDisabledRight}
+          >
+            <ArrowCircleRight2
+              size="24"
+              color={isDisabledRight ? colors.muted[500] : colors.primary[600]}
+            />
+          </TouchableOpacity>
+        </HStack>
       </Box>
     </HStack>
   );
