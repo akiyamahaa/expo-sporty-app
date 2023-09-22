@@ -18,18 +18,21 @@ const dayGroup = ["0", "1", "2", "3", "4", "5", "6"];
 const Menu = (props: Props) => {
   const { navigation } = props;
   const dispatch = useAppDispatch();
-  const [dayId, setDayId] = useState("1");
+  const [dayId, setDayId] = useState("4");
   const [listSession, setListSession] = useState<ISession>({});
+
   const handleBtnAdd = () => {
     navigation.navigate("CreateMenu");
   };
   const handleSearch = () => {};
 
   const handleGetMenu = async () => {
+    // Remove everything first
     try {
       dispatch(setLoading());
       const docRef = doc(firebaseDb, "menus", dayId);
       const docSnap = await getDoc(docRef);
+      setListSession({});
       if (docSnap.exists()) {
         setListSession(docSnap.data());
       } else {
@@ -56,8 +59,8 @@ const Menu = (props: Props) => {
       <VStack px={6} pt={8} pb={4} space={4}>
         <ScrollView horizontal>
           <HStack space={2}>
-            {dayGroup.map((valueId) => (
-              <Box width={20} key={valueId}>
+            {dayGroup.map((valueId, idx) => (
+              <Box width={20} key={`${valueId}-${idx}`}>
                 <CustomButton
                   btnText={convertDaytoName(valueId)}
                   active={valueId == dayId}
@@ -69,7 +72,7 @@ const Menu = (props: Props) => {
         </ScrollView>
         <ScrollView>
           <VStack flex={1} mt={4}>
-            <MenuDayCard objectListMenu={listSession} dayId={dayId} />
+            <MenuDayCard listSession={listSession} />
           </VStack>
         </ScrollView>
       </VStack>

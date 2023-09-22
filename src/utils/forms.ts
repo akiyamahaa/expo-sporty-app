@@ -73,3 +73,37 @@ export const convertSessionToName = (dayId: string) => {
       return "";
   }
 };
+
+export const calculateBMI = (height: number, weight: number) => {
+  let convertHeight = height / 100;
+  const bmi = weight / Math.pow(convertHeight, 2);
+  return bmi.toFixed(2);
+};
+
+export const evaluateBMI = (bmi: number) => {
+  switch (true) {
+    case bmi > 40:
+      return "Béo phì độ III";
+    case bmi >= 35:
+      return "Béo phì độ II";
+    case bmi >= 30:
+      return "Béo phì độ I";
+    case bmi >= 25:
+      return "Thừa cân";
+    case bmi >= 18.5:
+      return "Bình thường";
+    case bmi >= 17:
+      return "Gầy độ I";
+    case bmi >= 16:
+      return "Gầy độ II";
+    case bmi < 16:
+      return "Gầy độ III";
+    default:
+      return "Không xác định";
+  }
+};
+
+export const getCurrentDate = () => {
+  const date = new Date();
+  return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+};

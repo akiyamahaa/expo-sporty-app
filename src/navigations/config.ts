@@ -10,6 +10,9 @@ export type RootStackParams = {
   };
   BMI: undefined;
   Setting: undefined;
+  About: undefined;
+  Feedback: undefined;
+  DailyMenu: undefined;
 };
 export type BottomTabsParams = {
   Home: undefined;

@@ -6,45 +6,43 @@ import { ISession } from "../type/common";
 import { convertSessionToName } from "../utils/forms";
 
 type Props = {
-  objectListMenu: ISession;
-  dayId: string;
+  listSession: ISession;
+  isUpdateDaily?: boolean;
 };
 
-interface IEdit {
-  [key: string]: boolean;
-}
-
 const MenuDayCard = (props: Props) => {
-  const { objectListMenu } = props;
-  const { colors } = useTheme();
+  const { listSession, isUpdateDaily } = props;
 
-  const sessionKey = Object.keys(objectListMenu);
+  const sessionKey = Object.keys(listSession);
 
   return (
     <VStack space={4}>
-      {sessionKey.map((session) => {
-        const foodKey = Object.keys(objectListMenu[session]);
-        const objectFood = objectListMenu[session];
+      {sessionKey.map((session, idx) => {
+        const foodKey = Object.keys(listSession[session]);
+        const objectFood = listSession[session];
         return (
-          <Box>
-            <HStack justifyContent={"space-between"} mb={1}>
-              <Box>
-                <Text fontWeight={400} fontSize={16}>
-                  {convertSessionToName(session)}
-                </Text>
-              </Box>
-            </HStack>
-            <VStack space={2}>
-              {foodKey.map((food) => (
+          foodKey.length > 0 && (
+            <Box key={`${session}-${idx}`}>
+              <HStack justifyContent={"space-between"} mb={1}>
                 <Box>
-                  <FoodMenuCard
-                    foodInfo={objectFood[food].foodInfo}
-                    numFood={objectFood[food].quantity}
-                  />
+                  <Text fontWeight={400} fontSize={16}>
+                    {convertSessionToName(session)}
+                  </Text>
                 </Box>
-              ))}
-            </VStack>
-          </Box>
+              </HStack>
+              <VStack space={2}>
+                {foodKey.map((food) => (
+                  <Box key={food}>
+                    <FoodMenuCard
+                      foodInfo={objectFood[food]}
+                      sessionId={session}
+                      isUpdateDaily={isUpdateDaily}
+                    />
+                  </Box>
+                ))}
+              </VStack>
+            </Box>
+          )
         );
       })}
       {/* Show info when not having menu */}

@@ -10,6 +10,8 @@ export interface IFood {
   calories: number;
   image: string;
   content: Array<IContent>;
+  quantityPicked?: number;
+  status?:boolean
 }
 
 export interface IExercise {
@@ -29,10 +31,7 @@ export interface INews {
 }
 
 export interface IFoodSession {
-  [foodId: string]: {
-    foodInfo: IFood;
-    quantity: number;
-  };
+  [foodId: string]: IFood
 }
 
 export interface ISession {

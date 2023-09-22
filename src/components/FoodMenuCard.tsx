@@ -1,34 +1,69 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Box, HStack, Text, useTheme } from "native-base";
-import {
-  AddCircle,
-  ArrowCircleLeft2,
-  ArrowCircleRight2,
-  CloseCircle,
-} from "iconsax-react-native";
-import { IFood } from "../type/common";
+import { ArrowCircleLeft2, ArrowCircleRight2 } from "iconsax-react-native";
+import { IFood, ISession } from "../type/common";
+import CustomButton from "./CustomButton";
+import { getCurrentDate } from "../utils/forms";
+import { useAppDispatch } from "../store";
+import { removeLoading, setLoading } from "../store/loading.reducer";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { firebaseDb } from "../firebase";
 
 type Props = {
-  handleAdd?: any;
+  AddFoodToSession?: Function;
+  isUpdateDaily?: boolean;
   foodInfo: IFood;
-  numFood?: number;
+  sessionId?: string;
   isEdit?: boolean;
 };
 
 const FoodMenuCard = (props: Props) => {
   const { colors } = useTheme();
-  const { handleAdd, foodInfo, numFood, isEdit = false } = props;
-  const [quantity, setQuantity] = useState(numFood || 0);
+  const dispatch = useAppDispatch();
+  const {
+    AddFoodToSession = () => {},
+    isEdit = false,
+    foodInfo,
+    isUpdateDaily = null,
+    sessionId = "",
+  } = props;
+  const [quantity, setQuantity] = useState(foodInfo.quantityPicked || 0);
+  const date = getCurrentDate();
 
   const isDisabledLeft = quantity == 0 || !isEdit;
   const isDisabledRight = !isEdit;
 
   useEffect(() => {
-    if (handleAdd) {
-      handleAdd(foodInfo.id, quantity, foodInfo);
+    if (AddFoodToSession) {
+      AddFoodToSession(foodInfo, quantity);
     }
   }, [quantity]);
+
+  const handleUpdateDaily = async () => {
+    console.log(date, sessionId, foodInfo);
+    try {
+      dispatch(setLoading());
+      const docRef = doc(firebaseDb, "daily", date);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        let allSessionFood: ISession = docSnap.data();
+        await updateDoc(docRef, {
+          [sessionId]: {
+            ...allSessionFood[sessionId],
+            [foodInfo.id!]: {
+              ...foodInfo,
+              status: true,
+            },
+          },
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      dispatch(removeLoading());
+    }
+  };
 
   return (
     <HStack
@@ -48,27 +83,39 @@ const FoodMenuCard = (props: Props) => {
         </Text>
       </Box>
       <Box>
-        <HStack space={2} alignItems={"center"}>
-          <TouchableOpacity
-            onPress={() => setQuantity(quantity - 1)}
-            disabled={isDisabledLeft}
-          >
-            <ArrowCircleLeft2
-              size="24"
-              color={isDisabledLeft ? colors.muted[500] : colors.primary[600]}
+        {isUpdateDaily ? (
+          <Box width={10}>
+            <CustomButton
+              btnText={foodInfo.quantityPicked!.toString()}
+              handleBtn={handleUpdateDaily}
+              active={foodInfo.status}
             />
-          </TouchableOpacity>
-          <Text fontSize={18}>{quantity}</Text>
-          <TouchableOpacity
-            onPress={() => setQuantity(quantity + 1)}
-            disabled={isDisabledRight}
-          >
-            <ArrowCircleRight2
-              size="24"
-              color={isDisabledRight ? colors.muted[500] : colors.primary[600]}
-            />
-          </TouchableOpacity>
-        </HStack>
+          </Box>
+        ) : (
+          <HStack space={2} alignItems={"center"}>
+            <TouchableOpacity
+              onPress={() => setQuantity(quantity - 1)}
+              disabled={isDisabledLeft}
+            >
+              <ArrowCircleLeft2
+                size="24"
+                color={isDisabledLeft ? colors.muted[500] : colors.primary[600]}
+              />
+            </TouchableOpacity>
+            <Text fontSize={18}>{quantity}</Text>
+            <TouchableOpacity
+              onPress={() => setQuantity(quantity + 1)}
+              disabled={isDisabledRight}
+            >
+              <ArrowCircleRight2
+                size="24"
+                color={
+                  isDisabledRight ? colors.muted[500] : colors.primary[600]
+                }
+              />
+            </TouchableOpacity>
+          </HStack>
+        )}
       </Box>
     </HStack>
   );

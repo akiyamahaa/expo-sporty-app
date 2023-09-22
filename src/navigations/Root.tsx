@@ -17,8 +17,9 @@ import { Setting } from "iconsax-react-native";
 import BMI from "../screens/main/BMI";
 import CreateMenu2 from "../screens/main/CreateMenu2";
 import CreateMenu from "../screens/main/CreateMenu";
+import DailyMenu from "../screens/main/DailyMenu";
 
-const Stack = createNativeStackNavigator<any>();
+const Stack = createNativeStackNavigator<RootStackParams>();
 
 const Root = () => {
   const dispatch = useAppDispatch();
@@ -34,7 +35,7 @@ const Root = () => {
         paddingBottom: 8,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-        backgroundColor: false ? colors.muted[800] : colors.muted[900],
+        backgroundColor: user ? colors.muted[800] : colors.muted[900],
         flex: 1,
       }}
     >
@@ -55,8 +56,10 @@ const Root = () => {
           <Stack.Screen name="BMI" component={BMI} />
           <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
           <Stack.Screen name="CreateMenu" component={CreateMenu} />
+          <Stack.Screen name="DailyMenu" component={DailyMenu} />
+
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer>  
     </Box>
   );
 };

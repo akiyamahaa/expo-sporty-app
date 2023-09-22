@@ -24,70 +24,59 @@ const CreateMenu2 = (props: Props) => {
   const { navigation, route } = props;
   const { dayId, sessionId } = route.params;
   const dispatch = useAppDispatch();
-  const [listFood, setListFood] = useState<IFood[]>([]);
+  const [listAllFood, setListAllFood] = useState<IFood[]>([]);
   const [foodMenu, setFoodMenu] = useState<IFoodSession>({});
+  console.log("🚀 ~  listAllFood:", listAllFood);
+  console.log("🚀 ~  foodMenu:", foodMenu);
+
   // TODO: Get history menu to apply value to food quantity
 
-  const fetchAllFood = async () => {
-    try {
-      dispatch(setLoading());
-      const queryFood = await getDocs(collection(firebaseDb, "foods"));
-      const foods: IFood[] = [];
-      queryFood.forEach((doc: any) => {
-        foods.push({ ...doc.data() });
-      });
-      setListFood(foods);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      dispatch(removeLoading());
-    }
-  };
-
-  const handleGetFoodSession = async () => {
-    try {
-      dispatch(setLoading());
-      const docRef = doc(firebaseDb, "menus", dayId);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const objSession = docSnap.data();
-        const objFood = objSession[sessionId];
-        console.log(
-          "🚀 ~ file: CreateMenu2.tsx:55 ~ handleGetFoodSession ~ objFood:",
-          objFood
-        );
-        setFoodMenu(objFood);
-      }
-    } catch (err) {
-      console.log(err);
-    } finally {
-      dispatch(removeLoading());
-    }
-  };
-
   useEffect(() => {
+    const handleGetFoodSession = async () => {
+      try {
+        dispatch(setLoading());
+        const docRef = doc(firebaseDb, "menus", dayId);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const objSession = docSnap.data();
+          const objFood = objSession[sessionId];
+          if (objFood) {
+            setFoodMenu(objFood);
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      } finally {
+        dispatch(removeLoading());
+      }
+    };
     handleGetFoodSession();
+    const fetchAllFood = async () => {
+      try {
+        dispatch(setLoading());
+        const queryFood = await getDocs(collection(firebaseDb, "foods"));
+        const foods: IFood[] = [];
+        queryFood.forEach((doc: any) => {
+          foods.push({ ...doc.data() });
+        });
+        setListAllFood(foods);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        dispatch(removeLoading());
+      }
+    };
     fetchAllFood();
   }, []);
 
-  const handleFoodToMenu = (
-    foodId: string,
-    quantity: number,
-    foodInfo: IFood
-  ) => {
-    let newListFood: any = {};
-    // TODO: remove food data, just save food Id
-    newListFood = {
+  const handleFoodToMenu = (foodInfo: IFood, quantityPicked: number) => {
+    setFoodMenu({
       ...foodMenu,
-      [foodId]: {
-        foodInfo,
-        quantity,
+      [foodInfo.id!]: {
+        ...foodInfo,
+        quantityPicked,
       },
-    };
-    if (newListFood[foodId].quantity == 0) {
-      delete newListFood[foodId];
-    }
-    setFoodMenu(newListFood);
+    });
   };
 
   const handleBack = () => {
@@ -97,18 +86,27 @@ const CreateMenu2 = (props: Props) => {
   const handleDone = async () => {
     try {
       const menuDocRef = doc(firebaseDb, "menus", dayId);
-
       // check exist before create
       const docRef = doc(firebaseDb, "menus", dayId);
       const docSnap = await getDoc(docRef);
+      //NOTE: Remove item that have 0 quantity
+      let newListAllFood: IFoodSession = {
+        ...foodMenu,
+      };
+      Object.keys(newListAllFood).forEach((foodId) => {
+        if (newListAllFood[foodId].quantityPicked == 0) {
+          delete newListAllFood[foodId];
+        }
+      });
+      // Check exist for update or create
       if (docSnap.exists()) {
         // update menu
         await updateDoc(docRef, {
-          [sessionId]: foodMenu,
+          [sessionId]: newListAllFood,
         });
       } else {
         const menuData: ISession = {
-          [sessionId]: foodMenu,
+          [sessionId]: newListAllFood,
         };
         await setDoc(menuDocRef, menuData);
       }
@@ -128,15 +126,12 @@ const CreateMenu2 = (props: Props) => {
       />
       <ScrollView>
         <VStack space={4} py={4} px={6}>
-          {listFood.map((food) => (
+          {listAllFood.map((food) => (
             <Box key={food.id}>
               <FoodMenuCard
                 foodInfo={food}
-                handleAdd={handleFoodToMenu}
+                AddFoodToSession={handleFoodToMenu}
                 isEdit={true}
-                numFood={
-                  foodMenu[food.id as any] && foodMenu[food.id as any].quantity
-                }
               />
             </Box>
           ))}

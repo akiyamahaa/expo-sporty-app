@@ -2,6 +2,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Box, HStack, Icon, Input, Text, useTheme } from "native-base";
 import { Add, ArrowLeft2, SearchNormal, Setting2 } from "iconsax-react-native";
+import { RootState, useAppSelector } from "../store";
 
 const HomeHeader = ({ name = "Jack 5M", handleSetting = null }: any) => {
  
@@ -59,7 +60,7 @@ type Props = {
 
 const BasicHeader = (props: Props) => {
   // set when have user
-  const user = false;
+  const user = useAppSelector((state: RootState) => state.user.user);
   const {
     title,
     handleBtnBack = null,
