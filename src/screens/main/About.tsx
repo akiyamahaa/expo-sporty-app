@@ -2,11 +2,16 @@ import { StyleSheet } from "react-native";
 import React from "react";
 import { Box, Text } from "native-base";
 import Header from "../../components/Header";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../../navigations/config";
 
-type Props = {};
+type Props = {} & NativeStackScreenProps<RootStackParams, "About">;
 
 const About = (props: Props) => {
-  const handleBtnBack = () => {};
+  const { navigation } = props;
+  const handleBtnBack = () => {
+    navigation.goBack();
+  };
   return (
     <Box flex={1} bgColor={"muted.900"}>
       <Header.BasicHeader title="Về chúng tôi" handleBtnBack={handleBtnBack} />

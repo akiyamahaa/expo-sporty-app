@@ -107,3 +107,29 @@ export const getCurrentDate = () => {
   const date = new Date();
   return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 };
+
+export const convertTitle = (title: string) => {
+  switch (title) {
+    case "foods":
+      return "Thực phẩm";
+    case "exercises":
+      return "Luyện tập";
+    case "news":
+      return "Bài viết";
+    default:
+      return "";
+  }
+};
+
+export const convertHeaderTitle = (title: string) => {
+  switch (title) {
+    case "foods":
+      return "Thực phẩm dinh dưỡng";
+    case "exercises":
+      return "Bài tập thể dục thể thao";
+    case "news":
+      return "Các bài viết về sức khỏe";
+    default:
+      return "";
+  }
+};

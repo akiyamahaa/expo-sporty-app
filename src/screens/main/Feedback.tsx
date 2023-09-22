@@ -3,14 +3,17 @@ import React, { useState } from "react";
 import { Box, Text, TextArea, VStack, useTheme } from "native-base";
 import Header from "../../components/Header";
 import CustomButton from "../../components/CustomButton";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../../navigations/config";
 
-
-type Props = {};
+type Props = {} & NativeStackScreenProps<RootStackParams, "Feedback">;
 
 const Feedback = (props: Props) => {
   const { colors } = useTheme();
-
-  const handleBtnBack = () => {};
+  const { navigation } = props;
+  const handleBtnBack = () => {
+    navigation.goBack();
+  };
   return (
     <Box flex={1} bgColor={"muted.900"}>
       <Header.BasicHeader handleBtnBack={handleBtnBack} title="Gửi phản hồi" />

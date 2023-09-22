@@ -17,6 +17,9 @@ import { firebaseDb } from "../../firebase";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { ISession } from "../../type/common";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../../navigations/config";
+// import { createExercise, createNews } from "../../data/mockup";
 
 type BoxCaloriesProps = {
   type: "take" | "required";
@@ -58,16 +61,20 @@ const BoxCalories = (props: BoxCaloriesProps) => {
   );
 };
 
-type Props = {};
+type Props = {} & NativeStackScreenProps<RootStackParams, "TabNav">;
+
 const date = new Date();
 const Profile = (props: Props) => {
+  const { navigation } = props;
   const isFocused = useIsFocused();
   const user = useAppSelector((state: RootState) => state.user.user);
   const dispatch = useAppDispatch();
   const [foodMenu, setFoodMenu] = useState<ISession>({});
   const [dailySession, setDailySession] = useState<ISession>({});
 
-  const handleSetting = () => {};
+  const handleSetting = () => {
+    navigation.navigate("Setting");
+  };
 
   // Start Calculation
   const totalCaloriesNeeded = Object.keys(foodMenu).reduce(

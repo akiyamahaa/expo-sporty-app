@@ -13,11 +13,12 @@ import AuthStack from "./AuthStack";
 import TabNav from "./TabNav";
 import About from "../screens/main/About";
 import Feedback from "../screens/main/Feedback";
-import { Setting } from "iconsax-react-native";
 import BMI from "../screens/main/BMI";
 import CreateMenu2 from "../screens/main/CreateMenu2";
 import CreateMenu from "../screens/main/CreateMenu";
 import DailyMenu from "../screens/main/DailyMenu";
+import InfoDetail from "../screens/main/InfoDetail";
+import Setting from "../screens/main/Setting";
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
@@ -50,6 +51,7 @@ const Root = () => {
         >
           {!user && <Stack.Screen name="Auth" component={AuthStack} />}
           {user && <Stack.Screen name="TabNav" component={TabNav} />}
+          <Stack.Screen name="InfoDetail" component={InfoDetail} />
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="Feedback" component={Feedback} />
           <Stack.Screen name="Setting" component={Setting} />
@@ -57,9 +59,8 @@ const Root = () => {
           <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
           <Stack.Screen name="CreateMenu" component={CreateMenu} />
           <Stack.Screen name="DailyMenu" component={DailyMenu} />
-
         </Stack.Navigator>
-      </NavigationContainer>  
+      </NavigationContainer>
     </Box>
   );
 };
