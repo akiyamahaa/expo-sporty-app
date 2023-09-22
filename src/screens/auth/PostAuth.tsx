@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Box, Center, HStack, Text, VStack } from "native-base";
+import { Alert, Box, Center, HStack, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import PickGender from "../../components/PickGender";
@@ -13,7 +13,6 @@ import { fillProfileSchema, onInputChange } from "../../utils/forms";
 import { doc, setDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
 import { setUser } from "../../store/user.reducer";
-import { setError } from "../../store/error.reducer";
 
 type Props = {} & NativeStackScreenProps<
   AuthStackParams & RootStackParams,
@@ -54,7 +53,7 @@ const PostAuth = (props: Props) => {
       dispatch(setUser(docData));
       navigation.navigate("TabNav");
     } catch (err) {
-      dispatch(setError(err));
+      Alert("Lỗi hệ thống");
     } finally {
       dispatch(removeLoading());
     }

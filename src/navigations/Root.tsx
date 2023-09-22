@@ -19,6 +19,12 @@ import CreateMenu from "../screens/main/CreateMenu";
 import DailyMenu from "../screens/main/DailyMenu";
 import InfoDetail from "../screens/main/InfoDetail";
 import Setting from "../screens/main/Setting";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { removeLoading, setLoading } from "../store/loading.reducer";
+import { doc, getDoc } from "firebase/firestore";
+import { firebaseDb } from "../firebase";
+import { setUser } from "../store/user.reducer";
+import { IUserProfile } from "../type/user";
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
@@ -26,8 +32,28 @@ const Root = () => {
   const dispatch = useAppDispatch();
 
   const user = useAppSelector((state: RootState) => state.user.user);
+  console.log("🚀 ~ file: Root.tsx:35 ~ Root ~ user:", user);
   const insets = useSafeAreaInsets();
   const { colors } = useTheme();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      dispatch(setLoading());
+      const phone = await AsyncStorage.getItem("phone");
+      if (phone) {
+        const docRef = doc(firebaseDb, "users", phone);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          const userProfile = { ...data };
+          await AsyncStorage.setItem("phone", phone);
+          dispatch(setUser(userProfile as IUserProfile));
+        }
+      }
+      dispatch(removeLoading());
+    };
+    fetchUser();
+  }, []);
 
   return (
     <Box
@@ -51,14 +77,18 @@ const Root = () => {
         >
           {!user && <Stack.Screen name="Auth" component={AuthStack} />}
           {user && <Stack.Screen name="TabNav" component={TabNav} />}
-          <Stack.Screen name="InfoDetail" component={InfoDetail} />
-          <Stack.Screen name="About" component={About} />
-          <Stack.Screen name="Feedback" component={Feedback} />
-          <Stack.Screen name="Setting" component={Setting} />
-          <Stack.Screen name="BMI" component={BMI} />
-          <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
-          <Stack.Screen name="CreateMenu" component={CreateMenu} />
-          <Stack.Screen name="DailyMenu" component={DailyMenu} />
+          {user && (
+            <Stack.Group>
+              <Stack.Screen name="InfoDetail" component={InfoDetail} />
+              <Stack.Screen name="About" component={About} />
+              <Stack.Screen name="Feedback" component={Feedback} />
+              <Stack.Screen name="Setting" component={Setting} />
+              <Stack.Screen name="BMI" component={BMI} />
+              <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
+              <Stack.Screen name="CreateMenu" component={CreateMenu} />
+              <Stack.Screen name="DailyMenu" component={DailyMenu} />
+            </Stack.Group>
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     </Box>

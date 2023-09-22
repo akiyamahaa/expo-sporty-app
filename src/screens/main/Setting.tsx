@@ -11,6 +11,9 @@ import {
 import CustomButton from "../../components/CustomButton";
 import { RootStackParams } from "../../navigations/config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useAppDispatch } from "../../store";
+import { removeUser } from "../../store/user.reducer";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "Setting">;
 
@@ -56,6 +59,12 @@ const SettingPart = (props: PartProps) => {
 const Setting = (props: Props) => {
   const { navigation } = props;
   const handleSetting = () => {};
+  const dispatch = useAppDispatch();
+
+  const handleLogout = async () => {
+    await AsyncStorage.clear();
+    dispatch(removeUser());
+  };
   return (
     <Box flex={1} bgColor={"muted.900"}>
       <Header.HomeHeader handleSetting={handleSetting} />
@@ -65,7 +74,7 @@ const Setting = (props: Props) => {
           <SettingPart
             type="profile"
             handleBtn={() => {
-              navigation.navigate("TabNav");
+              navigation.goBack();
             }}
           />
           <SettingPart
@@ -82,7 +91,7 @@ const Setting = (props: Props) => {
           />
         </VStack>
         <Box>
-          <CustomButton btnText="Đăng xuất" />
+          <CustomButton btnText="Đăng xuất" handleBtn={handleLogout} />
         </Box>
       </VStack>
     </Box>

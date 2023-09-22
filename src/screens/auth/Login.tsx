@@ -1,17 +1,17 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Box, Checkbox, HStack, Text, VStack } from "native-base";
+import { Alert, Box, Checkbox, HStack, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { AuthStackParams, RootStackParams } from "../../navigations/config";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
-import { setError } from "../../store/error.reducer";
 import { doc, getDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../store/user.reducer";
 import { IUserProfile } from "../../type/user";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type Props = {} & NativeStackScreenProps<
   AuthStackParams & RootStackParams,
@@ -40,20 +40,21 @@ const Login = (props: Props) => {
       if (docSnap.exists()) {
         const data = docSnap.data();
         if (data.password !== password) {
-          setError("Sai mật khẩu");
+          Alert("Sai mật khẩu");
         } else {
           const userProfile = {
             ...data,
           };
+          await AsyncStorage.setItem("phone", phone);
           dispatch(setUser(userProfile as IUserProfile));
         }
       } else {
         // docSnap.data() will be undefined in this case
-        setError("Số điện thoại chưa đăng ký");
+        Alert("Số điện thoại chưa đăng ký");
       }
     } catch (err) {
       console.error(err);
-      dispatch(setError("Lỗi hệ thống hoặc mạng"));
+      Alert("Lỗi hệ thống hoặc mạng");
     } finally {
       dispatch(removeLoading());
     }
