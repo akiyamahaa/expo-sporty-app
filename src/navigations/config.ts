@@ -13,8 +13,10 @@ export type RootStackParams = {
   About: undefined;
   Feedback: undefined;
   DailyMenu: undefined;
-  InfoDetail: undefined;
-
+  InfoDetail: {
+    infoId: string;
+    infoType: string;
+  };
 };
 export type BottomTabsParams = {
   Home: undefined;

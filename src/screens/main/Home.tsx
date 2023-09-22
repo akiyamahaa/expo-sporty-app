@@ -4,15 +4,16 @@ import { Box, HStack, ScrollView, Text, VStack } from "native-base";
 import Header from "../../components/Header";
 import CustomButton from "../../components/CustomButton";
 import HomeCard from "../../components/HomeCard";
-import { RootState, useAppDispatch, useAppSelector } from "../../store";
-import { createFood } from "../../data/mockup";
+import { RootState, useAppSelector } from "../../store";
 import { collection, getDocs } from "firebase/firestore";
-import { IExercise, IFood, INews } from "../../type/common";
+import { IExercise, IFood, IInfo, INews } from "../../type/common";
 import { firebaseDb } from "../../firebase";
 import { convertHeaderTitle, convertTitle } from "../../utils/forms";
+import { RootStackParams } from "../../navigations/config";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-type Props = {};
-type IInfo = Array<IFood & IExercise & INews>;
+type Props = {} & NativeStackScreenProps<RootStackParams, "TabNav"> & any
+
 
 const Home = (props: Props) => {
   const user = useAppSelector((state: RootState) => state.user.user);
@@ -63,7 +64,15 @@ const Home = (props: Props) => {
           <VStack flex={1} space={4}>
             {list.map((inf) => (
               <Box key={inf.id}>
-                <HomeCard info={inf} />
+                <HomeCard
+                  info={inf}
+                  handleBtnNext={() => {
+                    props.navigation.navigate("InfoDetail", {
+                      infoId: inf.id!,
+                      infoType: category,
+                    });
+                  }}
+                />
               </Box>
             ))}
           </VStack>

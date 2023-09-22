@@ -61,14 +61,52 @@ const newsSample: INews[] = [
     subTitle: "Rau củ quả và các loại hạt là thực phẩm rất tốt cho sức khỏe",
     image:
       "https://thegioidiengiai.com/images/detailed/0/vi-sao-suc-khoe-quan-trong-nhat-voi-cuoc-song-moi-nguoi.jpg",
-    content: [],
+    content: [
+      {
+        title:
+          'Xây dựng chế độ ăn uống khoa học, lành mạnh <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+        content:
+          'Ăn uống là một trong những yếu tố vô cùng quan trọng quyết định đến sức khỏe của con người. Ông tổ của ngành y Hippocrates cũng đã từng nói "Hãy để thức ăn là thuốc của bạn”, không có loại thuốc nào quý giá và hữu hiệu bằng việc bạn lựa chọn cẩn thận, thông minh và khoa học những loại thực phẩm mà b <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>n tiêu thụ hàng ngày. ...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+      },
+      {
+        title:
+          'Ăn nhiều hơn rau củ quả tươi, và các loại hạt <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+        content:
+          'Rau củ quả và các loại hạt là thực phẩm rất tốt cho sức khỏe. Bởi những loại thực phẩm này là cả một kho chất dinh dưỡng, vitamin, khoáng chất,… có thể cung cấp cho cơ thể, giúp cơ thể khỏe mạnh hơn. <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+      },
+      {
+        title:
+          'Thường xuyên vận động, luyện tập thể dục, thể thao <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+        content:
+          'Một điều rất quan trọng để có sức khỏe tốt nữa là bạn phải vận động cơ thể thường xuyên. Nếu bạn chăm chỉ luyện tập thể dục, thể thao vận động thường xuyên, vóc dáng của bạn không chỉ được cải thiện mà não bộ và các hormone trong cơ thể còn được kích thích để hoạt động tối ưu, tăng cường sức khỏe. <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. Nhiều nghiên cứu đã chỉ ra rằng, tập thể dục, thể thao có thể làm giảm trầm cảm và giảm nguy cơ mắc các bệnh mạn tính như béo phì, tiểu đường loại 2, bệnh tim mạch, bệnh Alzheimer và rất nhiều loại khác. <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+      },
+    ],
   },
   {
     name: "5 thói quen tốt để khoẻ hơn mỗi ngày",
     subTitle: "Tìm hiểu về 5 thói quen tốt cho sức khỏe từ Prudentia",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0SNYRL-6-g7W63ZKVYbw_69KZpnRDx-5T0A&usqp=CAU",
-    content: [],
+    content: [
+      {
+        title:
+          'Xây dựng chế độ ăn uống khoa học, lành mạnh <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+        content:
+          'Ăn uống là một trong những yếu tố vô cùng quan trọng quyết định đến sức khỏe của con người. Ông tổ của ngành y Hippocrates cũng đã từng nói "Hãy để thức ăn là thuốc của bạn”, không có loại thuốc nào quý giá và hữu hiệu bằng việc bạn lựa chọn cẩn thận, thông minh và khoa học những loại thực phẩm mà b <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>n tiêu thụ hàng ngày. ...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+      },
+      {
+        title:
+          'Ăn nhiều hơn rau củ quả tươi, và các loại hạt <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+        content:
+          'Rau củ quả và các loại hạt là thực phẩm rất tốt cho sức khỏe. Bởi những loại thực phẩm này là cả một kho chất dinh dưỡng, vitamin, khoáng chất,… có thể cung cấp cho cơ thể, giúp cơ thể khỏe mạnh hơn. <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+      },
+      {
+        title:
+          'Thường xuyên vận động, luyện tập thể dục, thể thao <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+        content:
+          'Một điều rất quan trọng để có sức khỏe tốt nữa là bạn phải vận động cơ thể thường xuyên. Nếu bạn chăm chỉ luyện tập thể dục, thể thao vận động thường xuyên, vóc dáng của bạn không chỉ được cải thiện mà não bộ và các hormone trong cơ thể còn được kích thích để hoạt động tối ưu, tăng cường sức khỏe. <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. Nhiều nghiên cứu đã chỉ ra rằng, tập thể dục, thể thao có thể làm giảm trầm cảm và giảm nguy cơ mắc các bệnh mạn tính như béo phì, tiểu đường loại 2, bệnh tim mạch, bệnh Alzheimer và rất nhiều loại khác. <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a>...Cảm ơn Quý khách đã quan tâm nội dung về <a href="https://thegioidiengiai.com">máy lọc nước ion kiềm</a> #tgdgcopyright: tại Tập đoàn Thế Giới Điện Giải - Chuỗi máy điện giải ion kiềm số 1 Châu Á & duy nhất được vinh danh quốc tế. ',
+      },
+    ],
   },
 ];
 

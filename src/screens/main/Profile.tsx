@@ -19,6 +19,7 @@ import { ISession } from "../../type/common";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../navigations/config";
+import { createNews } from "../../data/mockup";
 // import { createExercise, createNews } from "../../data/mockup";
 
 type BoxCaloriesProps = {
@@ -61,7 +62,7 @@ const BoxCalories = (props: BoxCaloriesProps) => {
   );
 };
 
-type Props = {} & NativeStackScreenProps<RootStackParams, "TabNav">;
+type Props = {} & NativeStackScreenProps<RootStackParams, "TabNav"> & any;
 
 const date = new Date();
 const Profile = (props: Props) => {

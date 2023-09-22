@@ -41,3 +41,5 @@ export interface ISession {
 export interface IMenu {
   [dateId: string]: ISession;
 }
+
+export type IInfo = Array<IFood & IExercise & INews>;
