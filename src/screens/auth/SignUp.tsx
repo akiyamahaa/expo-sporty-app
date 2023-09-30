@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Alert, Box, Center, Checkbox, HStack, Text, VStack } from "native-base";
+import { Alert, Box, HStack, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -8,7 +8,7 @@ import { AuthStackParams } from "../../navigations/config";
 import { onInputChange, signUpSchema } from "../../utils/forms";
 import { useDispatch } from "react-redux";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
-import {  } from "../../store/error.reducer";
+import {} from "../../store/error.reducer";
 import { doc, getDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
 
@@ -58,7 +58,7 @@ const SignUp = (props: Props) => {
         password: formData.password,
       });
     } catch (err) {
-      Alert("Lỗi hệ thống")
+      Alert("Lỗi hệ thống");
     } finally {
       dispatch(removeLoading());
     }

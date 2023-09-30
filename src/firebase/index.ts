@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "sporty-app-e5be8.appspot.com",
   messagingSenderId: "268194145212",
   appId: "1:268194145212:web:c88d0f3f4b2ee916ea01b9",
-  measurementId: "G-5SHRGBXE5X"
+  measurementId: "G-5SHRGBXE5X",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

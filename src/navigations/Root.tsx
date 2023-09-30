@@ -32,7 +32,6 @@ const Root = () => {
   const dispatch = useAppDispatch();
 
   const user = useAppSelector((state: RootState) => state.user.user);
-  console.log("🚀 ~ file: Root.tsx:35 ~ Root ~ user:", user);
   const insets = useSafeAreaInsets();
   const { colors } = useTheme();
 

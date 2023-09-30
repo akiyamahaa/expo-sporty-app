@@ -12,11 +12,13 @@ import { convertDaytoName } from "../../utils/forms";
 import { ISession } from "../../type/common";
 import { useAppDispatch } from "../../store";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
+import { useIsFocused } from "@react-navigation/native";
 
 type Props = {} & NativeStackScreenProps<RootStackParams>;
 const dayGroup = ["0", "1", "2", "3", "4", "5", "6"];
 const Menu = (props: Props) => {
   const { navigation } = props;
+  const isFocused = useIsFocused();
   const dispatch = useAppDispatch();
   const [dayId, setDayId] = useState("4");
   const [listSession, setListSession] = useState<ISession>({});
@@ -47,7 +49,7 @@ const Menu = (props: Props) => {
 
   useEffect(() => {
     handleGetMenu();
-  }, [dayId]);
+  }, [dayId, isFocused]);
 
   return (
     <Box flex={1} bgColor={"muted.900"}>
@@ -57,7 +59,7 @@ const Menu = (props: Props) => {
         handleSearch={handleSearch}
       />
       <VStack px={6} pt={8} pb={4} space={4}>
-        <ScrollView horizontal>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <HStack space={2}>
             {dayGroup.map((valueId, idx) => (
               <Box width={20} key={`${valueId}-${idx}`}>

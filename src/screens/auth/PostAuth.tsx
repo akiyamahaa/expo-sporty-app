@@ -1,6 +1,6 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import React, { useState } from "react";
-import { Alert, Box, Center, HStack, Text, VStack } from "native-base";
+import { Alert, Box, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import PickGender from "../../components/PickGender";
@@ -119,7 +119,7 @@ const PostAuth = (props: Props) => {
         />
       </VStack>
       <Box mb={6}>
-        <CustomButton btnText="Tiếp tục" handleBtn={handleSignUp}/>
+        <CustomButton btnText="Tiếp tục" handleBtn={handleSignUp} />
       </Box>
     </Box>
   );

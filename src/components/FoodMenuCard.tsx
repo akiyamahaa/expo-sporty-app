@@ -28,6 +28,7 @@ const FoodMenuCard = (props: Props) => {
     isUpdateDaily = null,
     sessionId = "",
   } = props;
+  const [food, setFood] = useState(foodInfo);
   const [quantity, setQuantity] = useState(foodInfo.quantityPicked || 0);
   const date = getCurrentDate();
 
@@ -41,7 +42,6 @@ const FoodMenuCard = (props: Props) => {
   }, [quantity]);
 
   const handleUpdateDaily = async () => {
-    console.log(date, sessionId, foodInfo);
     try {
       dispatch(setLoading());
       const docRef = doc(firebaseDb, "daily", date);
@@ -58,6 +58,7 @@ const FoodMenuCard = (props: Props) => {
           },
         });
       }
+      setFood({ ...food, status: true });
     } catch (err) {
       console.log(err);
     } finally {
@@ -76,19 +77,19 @@ const FoodMenuCard = (props: Props) => {
     >
       <Box>
         <Text fontSize={16} fontWeight={400}>
-          {foodInfo.name}
+          {food.name}
         </Text>
         <Text fontSize={14} fontWeight={400} color="text.500">
-          {foodInfo.quantity}g - {foodInfo.calories} Calories
+          {food.quantity}g - {food.calories} Calories
         </Text>
       </Box>
       <Box>
         {isUpdateDaily ? (
           <Box width={10}>
             <CustomButton
-              btnText={foodInfo.quantityPicked!.toString()}
+              btnText={food.quantityPicked!.toString()}
               handleBtn={handleUpdateDaily}
-              active={foodInfo.status}
+              active={food.status}
             />
           </Box>
         ) : (

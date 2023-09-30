@@ -3,10 +3,6 @@ export enum EGender {
   F = "F",
 }
 
-export enum EUserRole {
-  Doctor,
-  Member,
-}
 export interface IUserProfile {
   phone: string;
   password: string;
