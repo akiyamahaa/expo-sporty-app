@@ -24,7 +24,7 @@ const HomeCard = (props: Props) => {
           />
           <VStack mx={4} flex={1}>
             <Box>
-              <Text fontWeight={400} fontSize={16}>
+              <Text fontWeight={400} fontSize={16} color={"#000"}>
                 {info.name}
               </Text>
             </Box>
