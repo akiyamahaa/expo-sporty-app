@@ -26,8 +26,6 @@ const CreateMenu2 = (props: Props) => {
   const dispatch = useAppDispatch();
   const [listAllFood, setListAllFood] = useState<IFood[]>([]);
   const [foodMenu, setFoodMenu] = useState<IFoodSession>({});
-  console.log("🚀 ~  listAllFood:", listAllFood);
-  console.log("🚀 ~  foodMenu:", foodMenu);
 
   // TODO: Get history menu to apply value to food quantity
 

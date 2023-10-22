@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
-import { Box, Text, VStack } from "native-base";
+import { Box, ScrollView, Text, VStack } from "native-base";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../navigations/config";
 import { useAppDispatch } from "../../store";
@@ -20,7 +20,6 @@ const InfoDetail = (props: Props) => {
   const { navigation, route } = props;
   const { infoId, infoType } = route.params;
   const [info, setInfo] = useState<IObjInfo>();
-  console.log("🚀 ~ file: InfoDetail.tsx:20 ~ InfoDetail ~ info:", info);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -47,32 +46,43 @@ const InfoDetail = (props: Props) => {
         handleBtnBack={() => navigation.goBack()}
         title={convertHeaderTitle(infoType)}
       />
-      <VStack px={6} py={4}>
-        <Text fontSize={24} fontWeight={500} color={"primary.600"}>
-          {info?.name}
-        </Text>
-        <Box py={2}>
-          <Image
-            source={{ uri: info?.image }}
-            style={{ width: "100%", height: 200, borderRadius: 20 }}
-            contentFit="cover"
-          />
-        </Box>
-        <VStack space={4}>
-          {info?.content.map((cont, idx) => (
-            <VStack space={2} key={`${cont}-${idx}`}>
-              <Box>
-                <Text fontSize={14} fontWeight={"bold"}>
-                  {cont.title}
-                </Text>
-              </Box>
-              <Box>
-                <Text>{cont.content}</Text>
-              </Box>
-            </VStack>
-          ))}
+      <ScrollView>
+        <VStack px={6} py={4}>
+          <Text fontSize={28} fontWeight={500} color={"primary.600"}>
+            {info?.name}
+          </Text>
+          <Box py={2}>
+            <Image
+              source={{ uri: info?.image }}
+              style={{ width: "100%", height: 200, borderRadius: 20 }}
+              contentFit="cover"
+            />
+          </Box>
+          <VStack space={4}>
+            {info?.content.map((cont, idx) => (
+              <VStack space={2} key={`${cont}-${idx}`}>
+                <Box>
+                  <Text fontSize={18} fontWeight={"bold"}>
+                    {cont.title}
+                  </Text>
+                </Box>
+                {cont.image && (
+                  <Box alignItems={"center"}>
+                    <Image
+                      source={{ uri: cont.image }}
+                      style={{ width: "100%", height: 150, borderRadius: 10 }}
+                      contentFit="cover"
+                    />
+                  </Box>
+                )}
+                <Box>
+                  <Text fontSize={16}>{cont.content}</Text>
+                </Box>
+              </VStack>
+            ))}
+          </VStack>
         </VStack>
-      </VStack>
+      </ScrollView>
     </Box>
   );
 };

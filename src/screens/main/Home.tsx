@@ -6,12 +6,13 @@ import CustomButton from "../../components/CustomButton";
 import HomeCard from "../../components/HomeCard";
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
 import { collection, getDocs } from "firebase/firestore";
-import { IExercise, IFood, IInfo, INews } from "../../type/common";
+import { IInfo } from "../../type/common";
 import { firebaseDb } from "../../firebase";
 import { convertHeaderTitle, convertTitle } from "../../utils/forms";
 import { RootStackParams } from "../../navigations/config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
+import { createFood } from "../../data/mockup";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "TabNav"> & any;
 
@@ -45,6 +46,7 @@ const Home = (props: Props) => {
   useEffect(() => {
     fetchAllFood(category);
   }, [category]);
+
 
   return (
     <Box flex={1} bgColor={"muted.900"}>

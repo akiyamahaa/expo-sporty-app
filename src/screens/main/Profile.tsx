@@ -19,7 +19,7 @@ import { ISession } from "../../type/common";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../navigations/config";
-import { createNews } from "../../data/mockup";
+import { createExercise, createFood, createNews } from "../../data/mockup";
 // import { createExercise, createNews } from "../../data/mockup";
 
 type BoxCaloriesProps = {
@@ -74,7 +74,8 @@ const Profile = (props: Props) => {
   const [dailySession, setDailySession] = useState<ISession>({});
 
   const handleSetting = () => {
-    navigation.navigate("Setting");
+    // navigation.navigate("Setting");
+    createExercise();
   };
 
   // Start Calculation
@@ -186,7 +187,7 @@ const Profile = (props: Props) => {
 
   return (
     <Box flex={1} bgColor={"muted.900"}>
-      <Header.HomeHeader handleSetting={handleSetting} />
+      <Header.HomeHeader name={user?.fullname} handleSetting={handleSetting} />
       <Box px={4} py={6}>
         <VStack space={4}>
           <Box>

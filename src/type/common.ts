@@ -1,5 +1,6 @@
 export interface IContent {
   title: string;
+  image: string;
   content: string;
 }
 
@@ -11,7 +12,7 @@ export interface IFood {
   image: string;
   content: Array<IContent>;
   quantityPicked?: number;
-  status?:boolean
+  status?: boolean;
 }
 
 export interface IExercise {
@@ -31,7 +32,7 @@ export interface INews {
 }
 
 export interface IFoodSession {
-  [foodId: string]: IFood
+  [foodId: string]: IFood;
 }
 
 export interface ISession {
