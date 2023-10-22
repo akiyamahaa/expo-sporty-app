@@ -8,7 +8,7 @@ const LoadingOverlay = () => {
 
   return (
     loading && (
-      <Center flex={1} style={styles.container}>
+      <Center style={styles.container}>
         <HStack space={2} justifyContent="center">
           <Spinner accessibilityLabel="Loading posts" color={"primary.600"} />
           <Heading color={"primary.600"} fontSize="md">
@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.15)",
     position: "absolute",
     zIndex: 1,
-    width: "100%",
-    height: "100%",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });
