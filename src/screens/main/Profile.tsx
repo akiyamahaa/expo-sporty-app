@@ -74,8 +74,7 @@ const Profile = (props: Props) => {
   const [dailySession, setDailySession] = useState<ISession>({});
 
   const handleSetting = () => {
-    // navigation.navigate("Setting");
-    createExercise();
+    navigation.navigate("Setting");
   };
 
   // Start Calculation

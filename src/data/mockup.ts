@@ -527,34 +527,34 @@ const exerciseSample: IExercise[] = [
   //     },
   //   ],
   // },
-  {
-    name: "Cable Rows",
-    time: "45", // minutes
-    image:
-      "https://static.strengthlevel.com/images/illustrations/seated-cable-row-1000x1000.jpg",
-    content: [
-      {
-        title: "Tại sao nên Cable Row?",
-        image: "",
-        content: "Cable Row tác động giúp cơ lưng sẽ trở nên săn chắc, phát triển cơ lưng một cách toàn diện. Bài tập Cable Row còn giúp tăng cường sức mạnh cơ lưng dưới, cơ dọc lưng và tác động thêm một phần cơ bụng, đùi sau.",
-      },
-      {
-        title: "Các bước thực hiện Cable row",
-        image: "",
-        content:`
-        Bước 1: Đầu tiên, bạn cần điều chỉnh trọng lượng của dụng cụ tập gym sao cho phù hợp nhất với sức khỏe của mình.
+  // {
+  //   name: "Cable Rows",
+  //   time: "45", // minutes
+  //   image:
+  //     "https://static.strengthlevel.com/images/illustrations/seated-cable-row-1000x1000.jpg",
+  //   content: [
+  //     {
+  //       title: "Tại sao nên Cable Row?",
+  //       image: "",
+  //       content: "Cable Row tác động giúp cơ lưng sẽ trở nên săn chắc, phát triển cơ lưng một cách toàn diện. Bài tập Cable Row còn giúp tăng cường sức mạnh cơ lưng dưới, cơ dọc lưng và tác động thêm một phần cơ bụng, đùi sau.",
+  //     },
+  //     {
+  //       title: "Các bước thực hiện Cable row",
+  //       image: "",
+  //       content:`
+  //       Bước 1: Đầu tiên, bạn cần điều chỉnh trọng lượng của dụng cụ tập gym sao cho phù hợp nhất với sức khỏe của mình.
         
-        Bước Bạn ngồi trên ghế của máy kéo cáp, hai tay giữ tay cầm chữ V, lòng bàn tay hướng vào nhau, chân đặt lên điểm tựa của 2 bàn đạp trên máy, đầu gối hơi khuỵu xuống nhưng khớp gối không khóa. . Hơi nghiêng người về phía trước, nâng ngực và kéo căng cơ ngực. Đây là vị trí bắt đầu cho bài tập đi dây có ghế ngồi.
+  //       Bước Bạn ngồi trên ghế của máy kéo cáp, hai tay giữ tay cầm chữ V, lòng bàn tay hướng vào nhau, chân đặt lên điểm tựa của 2 bàn đạp trên máy, đầu gối hơi khuỵu xuống nhưng khớp gối không khóa. . Hơi nghiêng người về phía trước, nâng ngực và kéo căng cơ ngực. Đây là vị trí bắt đầu cho bài tập đi dây có ghế ngồi.
         
-        Bước 2: Giữ yên cơ thể, kéo tay cầm chữ V về phía thân mình, thân mình và chân tạo thành góc 90 độ. Kéo tay cầm chữ V về phía bụng, kéo căng cơ lưng và giữ tư thế này trong khoảng 1 giây. Thở ra khi bạn làm điều này.
+  //       Bước 2: Giữ yên cơ thể, kéo tay cầm chữ V về phía thân mình, thân mình và chân tạo thành góc 90 độ. Kéo tay cầm chữ V về phía bụng, kéo căng cơ lưng và giữ tư thế này trong khoảng 1 giây. Thở ra khi bạn làm điều này.
        
-        Bước 3:  Từ từ kéo tay cầm hình chữ V về vị trí ban đầu, hít vào khi thực hiện động tác này, chú ý và từ từ kiểm soát độ mạnh khi thả tay cầm về vị trí ban đầu.
+  //       Bước 3:  Từ từ kéo tay cầm hình chữ V về vị trí ban đầu, hít vào khi thực hiện động tác này, chú ý và từ từ kiểm soát độ mạnh khi thả tay cầm về vị trí ban đầu.
        
-        Bước 4: Lặp lại toàn bộ động tác để tiếp tục luyện tập cho đến khi đạt được số lần lặp lại như mong muốn. Lưu ý khi thực hiện bài tập ngồi đu dây, cố gắng không để người đu đưa, vì như vậy sẽ gây tổn thương cho cơ lưng và không thể mang lại hiệu quả như mong đợi. Ngoài ra, nếu máy không có tay cầm hình chữ V, bạn có thể tập ngửa thùng với tay cầm theo chiều ngang, lòng bàn tay úp hoặc ngửa nhưng nhớ là tay cầm hẹp.
-        `,
-      },
-    ],
-  },
+  //       Bước 4: Lặp lại toàn bộ động tác để tiếp tục luyện tập cho đến khi đạt được số lần lặp lại như mong muốn. Lưu ý khi thực hiện bài tập ngồi đu dây, cố gắng không để người đu đưa, vì như vậy sẽ gây tổn thương cho cơ lưng và không thể mang lại hiệu quả như mong đợi. Ngoài ra, nếu máy không có tay cầm hình chữ V, bạn có thể tập ngửa thùng với tay cầm theo chiều ngang, lòng bàn tay úp hoặc ngửa nhưng nhớ là tay cầm hẹp.
+  //       `,
+  //     },
+  //   ],
+  // },
 ];
 const newsSample: INews[] = [
   // {
