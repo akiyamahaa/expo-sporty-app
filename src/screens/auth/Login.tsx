@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Alert, Box, Checkbox, HStack, Text, VStack } from "native-base";
+import { Alert, Box, Center, Checkbox, HStack, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../store/user.reducer";
 import { IUserProfile } from "../../type/user";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Image } from "expo-image";
 
 type Props = {} & NativeStackScreenProps<
   AuthStackParams & RootStackParams,
@@ -69,6 +70,13 @@ const Login = (props: Props) => {
       px={6}
     >
       <VStack flex={1} justifyContent={"center"} space={4}>
+        <Center>
+          <Image
+            source={require("../../../assets/logo.png")}
+            style={{ width: 150, height: 150 }}
+            contentFit="contain"
+          />
+        </Center>
         <InputLabel
           value={phone}
           onChangeText={setPhone}
@@ -110,7 +118,9 @@ const Login = (props: Props) => {
         </Box>
       </VStack>
       <HStack mb={16} space={1}>
-        <Text fontWeight={400} color={'muted.600'}>Bạn chưa có tài khoản?</Text>
+        <Text fontWeight={400} color={"muted.600"}>
+          Bạn chưa có tài khoản?
+        </Text>
         <TouchableOpacity onPress={onSignUp}>
           <Text
             fontWeight={500}
