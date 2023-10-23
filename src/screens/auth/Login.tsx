@@ -72,7 +72,7 @@ const Login = (props: Props) => {
       <VStack flex={1} justifyContent={"center"} space={4}>
         <Center>
           <Image
-            source={require("../../../assets/logo1.png")}
+            source={require("../../../assets/logo.png")}
             style={{ width: 150, height: 150 }}
             contentFit="contain"
           />

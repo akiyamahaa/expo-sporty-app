@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Alert, Box, HStack, Text, VStack } from "native-base";
+import { Alert, Box, Center, HStack, Text, VStack } from "native-base";
 import InputLabel from "../../components/InputLabel";
 import CustomButton from "../../components/CustomButton";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -11,6 +11,7 @@ import { removeLoading, setLoading } from "../../store/loading.reducer";
 import {} from "../../store/error.reducer";
 import { doc, getDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase";
+import { Image } from "expo-image";
 
 type Props = {} & NativeStackScreenProps<AuthStackParams, "SignUp">;
 
@@ -73,6 +74,13 @@ const SignUp = (props: Props) => {
       px={6}
     >
       <VStack flex={1} justifyContent={"center"} space={4}>
+        <Center>
+          <Image
+            source={require("../../../assets/logo.png")}
+            style={{ width: 150, height: 150 }}
+            contentFit="contain"
+          />
+        </Center>
         <InputLabel
           label="Số điện thoại"
           placeholder="Nhập số điện thoại/Email"
