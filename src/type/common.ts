@@ -1,6 +1,6 @@
 export interface IContent {
   title: string;
-  image: string;
+  image?: string;
   content: string;
 }
 
