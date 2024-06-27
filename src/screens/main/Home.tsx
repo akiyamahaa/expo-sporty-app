@@ -48,7 +48,7 @@ const Home = (props: Props) => {
   }, [category]);
 
   return (
-    <Box flex={1} bgColor={"muted.900"}>
+    <Box flex={1} bgColor={"background.primary"}>
       <Header.HomeHeader name={user?.fullname} />
       <VStack flex={1} px={6} pt={8} pb={4}>
         <HStack space={6}>

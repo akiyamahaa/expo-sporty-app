@@ -52,7 +52,7 @@ const Menu = (props: Props) => {
   }, [dayId, isFocused]);
 
   return (
-    <Box flex={1} bgColor={"muted.900"}>
+    <Box flex={1} bgColor={"background.primary"}>
       <Header.BasicHeader
         title="Thực đơn của riêng bạn"
         handleAdd={handleBtnAdd}

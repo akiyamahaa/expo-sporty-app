@@ -185,7 +185,7 @@ const Profile = (props: Props) => {
   }, [foodMenu]);
 
   return (
-    <Box flex={1} bgColor={"muted.900"}>
+    <Box flex={1} bgColor={"background.primary"}>
       <Header.HomeHeader name={user?.fullname} handleSetting={handleSetting} />
       <Box px={4} py={6}>
         <VStack space={4}>

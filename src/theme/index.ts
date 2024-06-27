@@ -21,6 +21,9 @@ export const newColorTheme = {
   error: {
     600: "#DC2626",
   },
+  background:{
+    primary:'#171717'
+  }
 };
 
 const appTheme = extendTheme({

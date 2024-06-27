@@ -29,7 +29,7 @@ const Exercises = ({ navigation }: Props) => {
   const exerciseDemo = newExercise["ppl"][0];
 
   return (
-    <Box flex={1} bgColor={"muted.900"}>
+    <Box flex={1} bgColor={"background.primary"}>
       <Header.BasicHeader title="Chế độ tập" />
       <VStack flex={1} px={6} pt={8} pb={4}>
         <HStack space={6}>
