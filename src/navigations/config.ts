@@ -17,10 +17,15 @@ export type RootStackParams = {
     infoId: string;
     infoType: string;
   };
+  ExerciseDetail: {
+    category:string;
+    exerciseId: string;
+  };
 };
 export type BottomTabsParams = {
   Home: undefined;
   Menu: undefined;
+  Exercises: undefined;
   Profile: undefined;
 };
 

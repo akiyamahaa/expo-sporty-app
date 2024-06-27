@@ -70,7 +70,7 @@ const BasicHeader = (props: Props) => {
   } = props;
   return (
     <Box bgColor={user ? "muted.800" : "muted.900"} px={4} py={2}>
-      <HStack alignItems={"center"} justifyContent={"space-between"} mb={2}>
+      <HStack alignItems={"center"} justifyContent={"space-between"}>
         {handleBtnBack ? (
           <TouchableOpacity onPress={handleBtnBack}>
             <ArrowLeft2 size="32" color="white" />

@@ -260,43 +260,34 @@ const foodSample: IFood[] = [
   // },
 ];
 const exerciseSample: IExercise[] = [
-//   {
-//     name: "Bench press",
-//     time: "45", // minutes
-//     image:
-//       "https://img.livestrong.com/640/cme-data/getty%2F8f630f91c4f84fc581e7d54e77caec27.jpg",
-//     content: [
-//       {
-//         title: "Tại sao nên Bench Press?",
-//         image: "",
-//         content: `Không còn nghi ngờ gì nữa, lợi ích lớn nhất  bạn sẽ nhận được khi tập Bench Press là sức mạnh của phần thân trên được cải thiện đáng kể. Các nhóm cơ được hưởng lợi nhiều nhất từ bài tập Bench Press là cơ ngực, cơ vai trước của vai và cơ tam đầu. Tập Bench Press đều đặn sẽ kích thích sự phát triển của các nhóm cơ này cả về kích thước lẫn sức mạnh.
-
-//             Bên cạnh đó, Bench Press cũng là bài tập cực kỳ hữu ích trong việc khôi phục sự cân bằng cho các nhóm cơ đối với các vận động viên bơi lội, leo núi hay đấu vật (do sử dụng cơ kéo nhiều).
-            
-//             Nhiều người khi tập luyện Bench Press cũng thấy có sự thay đổi tích cực về sức khoẻ cả về mặt thể chất (tăng cơ - giảm mỡ, xương khớp chắc khỏe hơn) lẫn tinh thần (giảm thiểu căng thẳng, stress).`,
-//       },
-//       {
-//         title: "Các bước thực hiện Bench Press",
-//         image: "",
-//         content: ` 
-// Bước 1: Bạn bắt đầu bài tập bằng việc nằm lên băng ghế phẳng với 2 chân trụ ở dưới sàn nhà.
-
-// Bước 2: Hai tay nắm lấy thanh tạ đòn với khoảng cách rộng bằng vai hoặc hơn vai một chút sao cho thanh đòn được giữ trong lòng bàn tay và cánh tay, cổ tay thẳng. 
-
-// Bước 3: Từ từ nhấc thanh tạ rời khỏi giá đỡ sao cho 2 cánh tay duỗi thẳng nhưng không khóa khớp. Nếu như bạn mới bắt đầu, có thể nhờ tới sự trợ giúp của huấn luyện viên để đảm bảo tạ không bị rơi xuống. 
-
-// Bước 4: Hít thở thật mạnh và từ từ đưa thanh tạ qua vai rồi khoá khớp tại vị trí này. 
-
-// Bước 5: Hít sâu và bắt đầu hạ thanh tạ thấp xuống dưới sao cho khuỷu tay hơi chếch 70 - 75 độ so với cơ thể còn cẳng tay thẳng đứng 
-
-// Bước 6: Cố gắng hạ tạ xuống, hướng về vị trí ngực tới khi gần chạm hoặc chạm nhẹ vào ngực. Tại vị trí này, duy trì trong khoảng 1 giây.
-
-// Bước 7: Thở ra và đẩy thanh tạ từ ngực hướng lên vai về vị trí ban đầu sao cho cánh tay duỗi thẳng hoàn toàn và khoá khuỷu tay ở vị trí trên cùng. 
-
-// Bước 8: Để kết thúc bài tập, đưa tạ về giá đỡ bằng cách uốn cong khuỷu tay để hạ thanh tạ xuống với tư thế thẳng đứng. `,
-//       },
-//     ],
-//   },
+  //   {
+  //     name: "Bench press",
+  //     time: "45", // minutes
+  //     image:
+  //       "https://img.livestrong.com/640/cme-data/getty%2F8f630f91c4f84fc581e7d54e77caec27.jpg",
+  //     content: [
+  //       {
+  //         title: "Tại sao nên Bench Press?",
+  //         image: "",
+  //         content: `Không còn nghi ngờ gì nữa, lợi ích lớn nhất  bạn sẽ nhận được khi tập Bench Press là sức mạnh của phần thân trên được cải thiện đáng kể. Các nhóm cơ được hưởng lợi nhiều nhất từ bài tập Bench Press là cơ ngực, cơ vai trước của vai và cơ tam đầu. Tập Bench Press đều đặn sẽ kích thích sự phát triển của các nhóm cơ này cả về kích thước lẫn sức mạnh.
+  //             Bên cạnh đó, Bench Press cũng là bài tập cực kỳ hữu ích trong việc khôi phục sự cân bằng cho các nhóm cơ đối với các vận động viên bơi lội, leo núi hay đấu vật (do sử dụng cơ kéo nhiều).
+  //             Nhiều người khi tập luyện Bench Press cũng thấy có sự thay đổi tích cực về sức khoẻ cả về mặt thể chất (tăng cơ - giảm mỡ, xương khớp chắc khỏe hơn) lẫn tinh thần (giảm thiểu căng thẳng, stress).`,
+  //       },
+  //       {
+  //         title: "Các bước thực hiện Bench Press",
+  //         image: "",
+  //         content: `
+  // Bước 1: Bạn bắt đầu bài tập bằng việc nằm lên băng ghế phẳng với 2 chân trụ ở dưới sàn nhà.
+  // Bước 2: Hai tay nắm lấy thanh tạ đòn với khoảng cách rộng bằng vai hoặc hơn vai một chút sao cho thanh đòn được giữ trong lòng bàn tay và cánh tay, cổ tay thẳng.
+  // Bước 3: Từ từ nhấc thanh tạ rời khỏi giá đỡ sao cho 2 cánh tay duỗi thẳng nhưng không khóa khớp. Nếu như bạn mới bắt đầu, có thể nhờ tới sự trợ giúp của huấn luyện viên để đảm bảo tạ không bị rơi xuống.
+  // Bước 4: Hít thở thật mạnh và từ từ đưa thanh tạ qua vai rồi khoá khớp tại vị trí này.
+  // Bước 5: Hít sâu và bắt đầu hạ thanh tạ thấp xuống dưới sao cho khuỷu tay hơi chếch 70 - 75 độ so với cơ thể còn cẳng tay thẳng đứng
+  // Bước 6: Cố gắng hạ tạ xuống, hướng về vị trí ngực tới khi gần chạm hoặc chạm nhẹ vào ngực. Tại vị trí này, duy trì trong khoảng 1 giây.
+  // Bước 7: Thở ra và đẩy thanh tạ từ ngực hướng lên vai về vị trí ban đầu sao cho cánh tay duỗi thẳng hoàn toàn và khoá khuỷu tay ở vị trí trên cùng.
+  // Bước 8: Để kết thúc bài tập, đưa tạ về giá đỡ bằng cách uốn cong khuỷu tay để hạ thanh tạ xuống với tư thế thẳng đứng. `,
+  //       },
+  //     ],
+  //   },
   // {
   //   name: "Barbell Squats",
   //   time: "45", // minutes
@@ -314,13 +305,9 @@ const exerciseSample: IExercise[] = [
   //       image: "",
   //       content: `
   //       Bước 1: Vào tư thế chuẩn bị hai chân bằng vai
-
   //       Bước 2: Đặt tạ đòn ở vị trí trên vai, gánh tạ với lung vai và hai tay ở hai bên
-
   //       Bước 3: Thực hiện động tác squat, thẳng lưng hạ gối và đẩy mông ra sau
-
   //       Bước 4: Hít vào khi ngồi xổm xuống và thở ra khi trở về vị trí ban đầu
-        
   //       Bước 5: Thực hiện 3 hiệp với 10-12 lần mỗi hiệp`,
   //     },
   //   ],
@@ -341,11 +328,8 @@ const exerciseSample: IExercise[] = [
   //       image: "",
   //       content:`
   //       Bước 1: Dang rộng hai chân sao cho khoảng cách rộng hơn vai, khuỵu nhẹ đầu gối, hai tay nắm thật chặt tạ đòn để hai tay chạm vào nhau. Lưu ý giữ lưng thật thẳng, ưỡn ngực ra phía trước.
-        
   //       Bước 2: Kéo căng phần vai, từ từ nâng tạ lên khỏi mặt đất. Sau đó, giữ thăng bằng tạ.
-
-  //       Bước 3: Dồn trọng lực cơ thể về trung tâm phần gót chân, cố giữ tạ càng gần thì càng tốt. 
-
+  //       Bước 3: Dồn trọng lực cơ thể về trung tâm phần gót chân, cố giữ tạ càng gần thì càng tốt.
   //       Bước 4: Nâng cao tạ đến khi ở vị trí ngang với đùi thì hạ tạ xuống rồi lặp lại động tác. `,
   //     },
   //   ],
@@ -365,12 +349,9 @@ const exerciseSample: IExercise[] = [
   //       title: "Các bước thực hiện Shoulder press",
   //       image: "",
   //       content:`
-  //       Bước 1: Ngồi trên ghế và giữ lưng thẳng, hai tay cầm hai tạ đơn ngang vai sao cho khuỷu tay vuông góc. 
-
-  //       Bước 2: Thở ra và đẩy tạ lên cao đến khi 2 tay duỗi thẳng. 
-        
-  //       Bước 3: Giữ 1 nhịp, sau đó thở ra và hạ tạ về vị trí ngang vai. 
-        
+  //       Bước 1: Ngồi trên ghế và giữ lưng thẳng, hai tay cầm hai tạ đơn ngang vai sao cho khuỷu tay vuông góc.
+  //       Bước 2: Thở ra và đẩy tạ lên cao đến khi 2 tay duỗi thẳng.
+  //       Bước 3: Giữ 1 nhịp, sau đó thở ra và hạ tạ về vị trí ngang vai.
   //       Bước 5: Thực hiện lặp lại các động tác trên.`,
   //     },
   //   ],
@@ -390,12 +371,9 @@ const exerciseSample: IExercise[] = [
   //       title: "Các bước thực hiện Incline Press",
   //       image: "",
   //       content:`
-  //       Bước 1: Ngồi lên ghế, hai chân trụ dưới sàn và hai tay cầm tạ đơn đặt lên đùi. 
-
-  //       Bước 2: Siết cơ ngực và nâng tạ thẳng lên vị trí ngang vai, lòng bàn tay hướng về phía đùi. Sau đó giữ nguyên tư thế này khoảng 1 nhịp. 
-        
-  //       Bước 3: Hạ tạ xuống sao cho cánh tay vuông góc với bắp tay. 
-        
+  //       Bước 1: Ngồi lên ghế, hai chân trụ dưới sàn và hai tay cầm tạ đơn đặt lên đùi.
+  //       Bước 2: Siết cơ ngực và nâng tạ thẳng lên vị trí ngang vai, lòng bàn tay hướng về phía đùi. Sau đó giữ nguyên tư thế này khoảng 1 nhịp.
+  //       Bước 3: Hạ tạ xuống sao cho cánh tay vuông góc với bắp tay.
   //       Bước 4: Thực hiện lặp lại động tác nâng - hạ tạ cho đến khi hết set tập.`,
   //     },
   //   ],
@@ -416,9 +394,7 @@ const exerciseSample: IExercise[] = [
   //       image: "",
   //       content:`
   //       Bước 1: đứng thẳng người, khoảng cách 2 chân rộng bằng vai. Mỗi tay cầm 1 tạ đơn. Lòng bàn tay hướng vào trong thân người.
-        
   //       Bước 2: thở ra, đồng thời nâng 2 tạ lên cao sao cho 2 tạ đơn ngang vai. Chỉ chuyển động cánh tay, toàn bộ thân người vẫn giữ thẳng, không lắc lư, di chuyển theo chuyển động của cánh tay.
-       
   //       Bước 3: hít vào, từ từ hạ tạ xuống về vị trí ban đầu.`,
   //     },
   //   ],
@@ -439,11 +415,8 @@ const exerciseSample: IExercise[] = [
   //       image: "",
   //       content:`
   //       1. Sử dụng thanh thẳng hoặc thanh E-Z nối vào ròng rọc. Nắm vào thanh tạ với lòng bàn tay hướng xuống.
-
   //       Quay lưng về phía tạ, cúi thấp người khoảng 30-45 độ. Đưa cánh tay trên song song với mặt đất. Cẳng tay co lại, căng cơ tay sau. Giữ cho cánh tay của bạn sát đầu. Đây là vị trí bắt đầu.
-        
   //       2. Dùng cơ tay sau duỗi cánh tay, đẩy thanh tạ ra xa. Thở ra. Cánh tay trên giữ nguyên, chỉ di chuyển phần cẳng tay.
-         
   //       3. Từ từ đưa thanh tạ trở về vị trí ban đầu có điều khiển. Hít vào trong suốt quá trình.`,
   //     },
   //   ],
@@ -463,7 +436,6 @@ const exerciseSample: IExercise[] = [
   //       title: "Các bước thực hiện Leg Press",
   //       image: "",
   //       content:`2 tay nắm phần tay cầm của máy, cạnh vị trí ghế ngồi và chân để thẳng nhưng không để thẳng tuyệt đối, vẫn có độ cong chân vừa phải. Tháo chốt an toàn của máy tập Leg Press, hít vào và siết chặt cơ mông, cơ đùi. Từ từ hạ chân xuống để đùi và chân tạo thành góc 90 độ. Giữ vị trí đó trong 1 giây.
-
   //       Tập trung vào cơ đùi, cơ bắp chân, cơ mông và từ từ đẩy máy lên vị trí cũ. Thở ra và giữ vị trí đó trong 1 giây. Lặp lại các động tác để tiếp tục bài tập và thực hiện từ 10-15 lần/hiệp.`,
   //     },
   //   ],
@@ -478,7 +450,6 @@ const exerciseSample: IExercise[] = [
   //       title: "Tại sao nên Chest Fly?",
   //       image: "",
   //       content: `Các bài tập với máy chest fly có thể giúp tăng sức mạnh và khối lượng cơ ngực bằng cách tác động vào nhóm cơ này. Cơ ngực gồm có 2 phần là cơ ngực lớn và cơ ngực nhỏ. Các bài tập với máy chest fly chủ yếu có lợi cho cơ ngực lớn. Đây là nhóm cơ chịu trách nhiệm vận động ở khớp vai và thường được sử dụng trong các hoạt động hàng ngày như xách đồ nặng hoặc bế em bé. Ngoài ra, cơ ngực này cũng chịu trách nhiệm kiểm soát lồng ngực và xương sườn khi hít thở sâu.
-
   //       Ngoài ra, việc thực hiện các bài tập với máy tập chest fly cũng đặc biệt hữu ích nếu bạn là người mới. Bởi khi thực hiện với máy, bạn sẽ thực hiện các bài tập ở tư thế ngồi và được hỗ trợ bởi một miếng đệm phía sau nên dễ dàng tập luyện. Ngoài ra, tư thế ngồi cũng giúp bạn dồn toàn lực vào cơ ngực.`,
   //     },
   //     {
@@ -486,15 +457,10 @@ const exerciseSample: IExercise[] = [
   //       image: "",
   //       content:`
   //       Bước 1: Ngồi thẳng lưng, thả lỏng cổ và vai. Bàn chân đặt trên sàn
-       
   //       Bước 2: Nắm lấy tay cầm sao cho lòng bàn tay hướng về phía trước
-        
   //       Bước 3: Di chuyển hai tay cầm khép vào nhau với chuyển động chậm, có kiểm soát. Giữ khuỷu tay hơi cong nhẹ, mềm mại với cổ tay thả lỏng.
-       
   //       Bước 4:  Tạm dừng một giây sau khi cánh tay khép hoàn toàn trước ngực.
-       
   //       Bước 5:  Di chuyển cánh tay từ từ trở lại vị trí bắt đầu, mở ngực và giữ thẳng lưng
-      
   //       Bước 6: Thực hiện 2 hiệp, mỗi hiệp từ 7 đến 10 lần lặp lại.`,
   //     },
   //   ],
@@ -515,14 +481,10 @@ const exerciseSample: IExercise[] = [
   //       title: "Các bước thực hiện Pull Úp",
   //       image: "",
   //       content:`
-  //       Nắm tay lên xà sao cho hai tay rộng bằng hoặc hơn vai một chút.  
-
+  //       Nắm tay lên xà sao cho hai tay rộng bằng hoặc hơn vai một chút.
   //       Giữ chặt cơ thể, uốn cong ở khuỷu tay và vai
-        
   //       Từ từ kéo phần ngực của bạn về phía thanh cho tới khi cằm ngang với xà.
-        
-  //       Chậm rãi hạ cơ thể xuống tới vị trí ban đầu khi tay được duỗi thẳng hoàn toàn. 
-        
+  //       Chậm rãi hạ cơ thể xuống tới vị trí ban đầu khi tay được duỗi thẳng hoàn toàn.
   //       Lưu ý: Tránh đung đưa chân hay cơ thể có thể khiến bạn nhanh mất sức hơn. `,
   //     },
   //   ],
@@ -543,19 +505,18 @@ const exerciseSample: IExercise[] = [
   //       image: "",
   //       content:`
   //       Bước 1: Đầu tiên, bạn cần điều chỉnh trọng lượng của dụng cụ tập gym sao cho phù hợp nhất với sức khỏe của mình.
-        
   //       Bước Bạn ngồi trên ghế của máy kéo cáp, hai tay giữ tay cầm chữ V, lòng bàn tay hướng vào nhau, chân đặt lên điểm tựa của 2 bàn đạp trên máy, đầu gối hơi khuỵu xuống nhưng khớp gối không khóa. . Hơi nghiêng người về phía trước, nâng ngực và kéo căng cơ ngực. Đây là vị trí bắt đầu cho bài tập đi dây có ghế ngồi.
-        
   //       Bước 2: Giữ yên cơ thể, kéo tay cầm chữ V về phía thân mình, thân mình và chân tạo thành góc 90 độ. Kéo tay cầm chữ V về phía bụng, kéo căng cơ lưng và giữ tư thế này trong khoảng 1 giây. Thở ra khi bạn làm điều này.
-       
   //       Bước 3:  Từ từ kéo tay cầm hình chữ V về vị trí ban đầu, hít vào khi thực hiện động tác này, chú ý và từ từ kiểm soát độ mạnh khi thả tay cầm về vị trí ban đầu.
-       
   //       Bước 4: Lặp lại toàn bộ động tác để tiếp tục luyện tập cho đến khi đạt được số lần lặp lại như mong muốn. Lưu ý khi thực hiện bài tập ngồi đu dây, cố gắng không để người đu đưa, vì như vậy sẽ gây tổn thương cho cơ lưng và không thể mang lại hiệu quả như mong đợi. Ngoài ra, nếu máy không có tay cầm hình chữ V, bạn có thể tập ngửa thùng với tay cầm theo chiều ngang, lòng bàn tay úp hoặc ngửa nhưng nhớ là tay cầm hẹp.
   //       `,
   //     },
   //   ],
   // },
 ];
+
+
+
 const newsSample: INews[] = [
   // {
   //   name: "Vì sao sức khỏe là quan trọng nhất?",
@@ -611,7 +572,6 @@ const newsSample: INews[] = [
   //       image: "",
   //       content: `Tập gym mang lại thân hình đẹp và săn chắc:
   //       Luyện tập thể dục hàng ngày kết hợp với chế độ dinh dưỡng hợp lý. Nó sẽ mang lại cho mọi người vóc dáng và thân hình cân đối. Lượng mỡ thừa giảm đáng kể, cơ bắp săn chắc và thân hình cân đối.
-        
   //       Tập gym giúp tăng cường sức mạnh cơ bắp:
   //       Chắc hẳn bạn cũng đã thấy cảnh một số anh chàng và cô nàng trông thì có vẻ khỏe nhưng thể lực thực sự rất yếu. Đó chính là lý do khiến mọi người cần phải tập gym để có thể tăng cường thể lực thực hiện những công việc đòi hỏi thể lực cao. Khi bạn tập Gym, các mô cơ yếu sẽ được loại bỏ và xây dựng các mô cơ mới to hơn, khỏe mạnh hơn.
   //       Khi bạn luyện tập, các bài tập cơ vai, cơ lưng, cơ bụng, chân. Nó giúp tăng cường sức mạnh, độ dẻo dai, khả năng chịu đựng của các cơ giúp bạn phát triển chiều cao rất tốt.`,
@@ -649,15 +609,13 @@ const newsSample: INews[] = [
   //     {
   //       title: "Nguồn dinh dưỡng cần thiết trong chế độ ăn cho người tập gym",
   //       image: "",
-  //       content: `Tập gym là hoạt động có lợi cho sức khỏe, giúp cho bạn có một vóc dáng lý tưởng. Đồng thời việc tập thể hình đối kháng sẽ tăng sức mạnh về cơ bắp và phòng được một số bệnh như: bệnh tim, thận, ung thư. 
-
+  //       content: `Tập gym là hoạt động có lợi cho sức khỏe, giúp cho bạn có một vóc dáng lý tưởng. Đồng thời việc tập thể hình đối kháng sẽ tăng sức mạnh về cơ bắp và phòng được một số bệnh như: bệnh tim, thận, ung thư.
   //       Trong đó, chế độ ăn cho người tập gym cũng góp phần quan trọng để hỗ trợ cung cấp các dưỡng chất cần thiết tốt cho cơ thể. Một số thực phẩm đảm bảo về hiệu quả cho người tập gym gồm có:`,
   //     },
   //     {
   //       title: "Chất protein",
   //       image: "",
-  //       content: `Protein hay nhóm chất đạm có chứa nhiều axit amin là chất dinh dưỡng cần thiết trong chế độ ăn cho người tập gym. Chất đạm có vai trò quan trọng giúp tăng cơ bắp, giảm mỡ trong cơ thể. 
-
+  //       content: `Protein hay nhóm chất đạm có chứa nhiều axit amin là chất dinh dưỡng cần thiết trong chế độ ăn cho người tập gym. Chất đạm có vai trò quan trọng giúp tăng cơ bắp, giảm mỡ trong cơ thể.
   //       Khẩu phần ăn thích hợp cho người tập gym mỗi ngày cần ít nhất 2,2 gam chất đạm/ kg theo trọng lượng cơ thể của mỗi người. `,
   //     },
   //     {
@@ -676,7 +634,6 @@ const newsSample: INews[] = [
   //       title: "Tinh bột",
   //       image: "",
   //       content: `Tinh bột hay còn được gọi là carbohydrate có khả năng cung cấp năng lượng rất tốt cho cơ thể đặc biệt là trong chế độ ăn cho người tập gym. Một gam của tinh bột có thể cung cấp đến 4 calo. Đồng thời, thời gian tiêu thụ của tinh bột khá nhanh chỉ trong khoảng từ 1,5 - 2 giờ. Tinh bột có nhiều trong một số lương thực như là khoai, sắn, cơm, bún, phở.
-
   //       Các chuyên gia dinh dưỡng khuyến nghị với người tập gym để tăng cân nên bổ sung tinh bột với tỷ lệ là 45 - 60% của tổng lượng calo nạp vào mỗi ngày. Còn với người tập gym giảm cân thì lượng calo sẽ giảm xuống từ 50 - 100g trong khẩu phần ăn mỗi ngày. `,
   //     },
   //     {
@@ -689,20 +646,15 @@ const newsSample: INews[] = [
   //       title: " Cung cấp nước cho cơ thể",
   //       image: "",
   //       content: `Nước chiếm tỷ trọng cao trong cơ thể của mỗi người, đặc biệt là trong chế độ ăn cho người tập gym thì nước càng góp phần quan trọng. Bởi vì khi bạn tập luyện với cường độ lớn việc thiếu nước dễ giảm khả năng sinh lực, bị chuột rút. Điều này cũng khó khăn khi bạn tập tạ với cổ họng và miệng khô do không bổ sung nước. Chính vì vậy, bạn nên chú ý khuyến cáo hữu ích từ Học viện Y khoa Thể thao Mỹ dành riêng cho người tập gym như dưới đây:
-
   //       Trước khi tập luyện: Bạn nên bổ sung 500 ml nước hoặc là ít hơn trước khi tập từ 1 - 2 giờ (tương đương với 2 cốc nước trung bình).
-        
   //       Trong quá trình tập: Cứ mỗi 15 - 20 phút, bạn nên bổ sung thêm cho cơ thể 350ml nước (nghĩa là trong 1 giờ tập bạn cần uống 1 lít nước).`,
   //     },
   //     {
   //       title: "Thực phẩm không nên dùng đối với người tập gym",
   //       image: "",
   //       content: `Bên cạnh những thực phẩm cần đảm bảo trong chế độ ăn cho người tập gym thì bạn cũng cần lưu ý một số đồ ăn không tốt như sau:
-
   //       Đường: Có chứa trong nhiều bánh, kẹo, đồ uống có ga, đồ uống có đường như soda cung cấp nhiều calo nhưng lại không chứa dinh dưỡng tốt.
-        
   //       Rượu: Ảnh hưởng xấu cho việc tập luyện, tác động trực tiếp đến xây dựng cơ bắp nếu sử dụng quá nhiều.
-        
   //       Đồ ăn nhanh, chiên rán: Có thể kể đến một số đồ ăn chiên rán như khoai tây chiên, cá chiên,... đều có những tác hại xấu cho sức khỏe không tốt khi tập luyện`,
   //     },
   //     {
@@ -715,34 +667,28 @@ const newsSample: INews[] = [
   //       title: "Bữa sáng",
   //       image: "",
   //       content: `Bữa sáng là một bữa ăn quan trọng trong ngày vì cung cấp năng lượng hoạt động hiệu quả để bắt đầu một ngày mới. Do vậy, bạn không nên bỏ bữa ăn sáng, thực đơn gợi ý được chia ra thành 2 nhóm đối tượng bao gồm:
-
-  //       Với người tập gym tăng cân: Bạn có thể ăn phở bò hoặc phở gà cùng với 1 trái chuối. Ngoài ra, không thể thiếu bổ sung nước cần thiết cho cơ thể khoảng 300ml nước dàn đều buổi sáng. 
-        
+  //       Với người tập gym tăng cân: Bạn có thể ăn phở bò hoặc phở gà cùng với 1 trái chuối. Ngoài ra, không thể thiếu bổ sung nước cần thiết cho cơ thể khoảng 300ml nước dàn đều buổi sáng.
   //       Với người tập gym giảm cân: Bạn có thể lựa chọn thực phẩm hỗ trợ cải thiện vóc dáng như yến mạch (45g), sữa không đường (300ml) hoặc nước ép táo (200ml) cùng với một thìa mật ong.`,
   //     },
   //     {
   //       title: "Bữa trưa",
   //       image: "",
   //       content: `Người tập gym tăng cân: Bạn nên ăn từ 2 - 3 chén cơm cùng với 200g thịt gà và bổ sung một số loại rau như rau chân vịt, bông cải xanh, bí đỏ (thay đổi theo mỗi bữa ăn) để giúp chế độ ăn cho người tập gym thêm phong phú về lượng dưỡng chất cần thiết.
-
   //       Người tập gym giảm cân: Với những người cần tập luyện giữ gìn vóc dáng thì nên bổ sung trong khẩu phần ăn như là 200 gam cá hồi hoặc 200g ức gà, các loại hạt (việt quất, mâm xôi, óc chó) cùng trái cây.`,
   //     },
   //     {
   //       title: "Bữa tối",
   //       image: "",
-  //       content: `Chế độ ăn cho người tập gym tăng cân: Bạn có thể áp dụng thực đơn như bữa trưa nhưng thay đổi món ăn như là bắp cải cuộn thịt, bò hầm tiêu, canh rau củ sườn non, su su luộc, gà hầm hạt sen,... 
-
+  //       content: `Chế độ ăn cho người tập gym tăng cân: Bạn có thể áp dụng thực đơn như bữa trưa nhưng thay đổi món ăn như là bắp cải cuộn thịt, bò hầm tiêu, canh rau củ sườn non, su su luộc, gà hầm hạt sen,...
   //       Chế độ ăn cho người tập gym giảm cân: bạn có thể linh hoạt thay đổi món ăn thích hợp cho việc tập luyện như là cá ngừ, các loại rau như xà lách, cà chua, rau bina hoặc cơm gạo lứt, thịt gà nướng. `,
   //     },
   //     {
   //       title: "Thời gian lý tưởng theo chế độ ăn cho người tập gym",
   //       image: "",
-  //       content: `Tập luyện thể hình ngoài việc bổ sung dưỡng chất cần thiết, yếu tố thời gian cũng góp phần quan trọng. Sau đây là khung thời gian thích hợp với mỗi chế độ ăn cho người tập gym: 
-
+  //       content: `Tập luyện thể hình ngoài việc bổ sung dưỡng chất cần thiết, yếu tố thời gian cũng góp phần quan trọng. Sau đây là khung thời gian thích hợp với mỗi chế độ ăn cho người tập gym:
   //       Ăn sáng trước lúc 8 giờ: Một nguyên tắc chung là bạn không được bỏ bữa sáng trong việc tập luyện vì dễ bị đói lả, làm việc không năng suất. Thời gian thích hợp theo chuyên gia dinh dưỡng để ăn sáng là trước 8 giờ
   //       Ăn trưa trước 12 giờ: Để bổ sung năng lượng tốt nhất cho hoạt động buổi chiều cũng như phục hồi lại cơ thể sau quá trình tập luyện bạn nên bổ sung dưỡng chất cho bữa trưa trước 12 giờ.
   //       Ăn tối trước 19 giờ: Để hạn chế quá trình tích tụ mỡ trong cơ thể, bạn nên cung cấp cho cơ thể dinh dưỡng đảm bảo trước 19 giờ với bữa tối.
-
   //       Nhìn chung, để đảm bảo chế độ ăn cho người tập gym tăng cân hoặc giảm cân đều áp dụng nguyên tắc chung là cần đủ dinh dưỡng. Bạn nên cân bằng những dưỡng chất cần thiết cho mỗi bữa ăn để giúp quá trình tập luyện đạt hiệu quả cao. `,
   //     },
   //   ],
@@ -757,7 +703,6 @@ const newsSample: INews[] = [
   //     title: "Tập gym giảm cân nhanh không?",
   //       image: "",
   //       content: `Béo có lẽ là nỗi lo day dứt không có hồi kết, dù là nam hay nữ bạn vẫn sẽ cảm thấy tự ti với vòng eo thừa mỡ và mong muốn được sở hữu thân hình thon gọn, săn chắc. Gym là bộ môn rất được giới trẻ yêu thích và sẽ là giải pháp hoàn hảo giúp những đối tượng này cải thiện cân nặng một cách đáng tin cậy.
-
   //       Với mục đích giảm béo, những buổi tập đầu sẽ khá khó khăn khiến tâm lý ngày càng trì trệ, gây chán nản, liệu trong đầu bạn đã từng nảy sinh ra câu hỏi Tập gym giảm cân nhanh không? Phải làm gì để kết quả được cải thiện nhanh nhất có thể? Chúng tôi xin phép giải đáp rằng vấn đề này còn tùy thuộc ở bạn mà quá trình giảm cân diễn ra nhanh hay chậm. Tập gym còn dựa vào lịch bạn sắp xếp, bài tập bạn chọn, và chế độ ăn uống ra sao,...
   //       Nếu như bạn chăm chỉ tập luyện nhưng đều sai kỹ thuật hoặc không ăn kiêng thì chắc chắn ước mơ giảm cân sẽ rất xa vời. Thế nên hãy tuân thủ quy tắc tập luyện cũng như lựa chọn thực đơn cung cấp sao cho phù hợp nhất để kết quả đạt được tốt nhất.`,
   //     },
@@ -767,16 +712,12 @@ const newsSample: INews[] = [
   //       content: `
   //       2.1. Bỏ bữa sáng
   //       Đừng suy nghĩ việc nhịn ăn sáng sẽ làm bạn giảm cân nhanh hơn, đó chính là nguyên nhân khiến cơ thể cần lượng calo nhiều hơn, khiến bạn dễ đói và ăn dồn dập hơn. Điều đó càng làm cho kế hoạch giảm cân trở nên thất bại kèm theo sức khỏe ngày càng giảm sút.
-        
   //       2.2. Uống ít nước
   //       Bạn có thể không ăn nhưng không thể nhịn uống nước, vì nước rất quan trọng cho quá trình chuyển đổi chất, giúp đốt số calo không cần thiết. Theo nghiên cứu, bạn nên uống đủ 8 ly nước mỗi ngày để đốt cháy nhiều calo hơn, hãy chăm uống nước lọc trước bữa chính và bữa phụ để cơ thể không bị thiếu nước nhé.
-        
   //       2.3. Ăn no và ăn ít
   //       Ăn quá no hoặc ăn quá ít chính là lý do khiến bạn khó giảm cân. Bạn nên chia thức ăn thành nhiều bữa, để quá trình trao đổi chất diễn ra chậm lại và giúp cơ thể đốt cháy nhiều calo hơn.
-        
   //       2.4. Không tập luyện chăm chỉ
   //       Chỉ ăn ít mà không tập luyện thì cũng là nguyên nhân gây khó giảm cân, ngược lại còn khiến cơ thể mệt mỏi, thiếu năng lượng, dễ sinh ra các bệnh nguy hiểm.
-        
   //       2.5. Sử dụng thuốc giảm cân quá đà
   //       Hiện nay, nhiều người chủ quan sử dụng thuốc giảm cân như một phương pháp giảm cân nhanh chóng. Tuy nhiên, thuốc giảm cân chỉ giúp cơ thể đào thải nước ra ngoài, không giúp giảm mỡ mà còn trì trệ sức khỏe ngày càng đi xuống.`,
   //     },
@@ -785,23 +726,14 @@ const newsSample: INews[] = [
   //       image: "",
   //       content: `
   //       Để thoát khỏi tình trạng thừa mỡ thì hãy sắp xếp lịch tập một cách hợp lý, tránh trường hợp tập liên tục, quá sức gây ra nhiều ảnh hưởng xấu. Thế nên, nhằm hỗ trợ giảm cân hiệu quả
-        
   //       xin mời các bạn tham khảo lịch tập mà chúng tôi đưa ra:
-        
   //       Thứ 2: Tập cơ vai.
-        
   //       Thứ 3:Tập cơ ngực.
-        
   //       Thứ 4: Tập phần chân và bắp chân.
-        
   //       Thứ 5: Tập lưng và cơ xô.
-        
   //       Thứ 6: Tập cho phần vai, bụng và chân.
-        
   //       Thứ 7: Tập tay trước và tay sau.
-        
   //       Chủ nhật: Nghỉ ngơi hoặc chọn các bài tập nhẹ nhàng.
-        
   //       Đây chỉ là lịch tập chung cho những bạn có nhu cầu, vì lịch tập thay đổi liên tục nên hãy linh động sắp xếp nhé. Không nên tập với cường độ quá cao, hãy bắt đầu với mức tập nhẹ nhất rồi từ từ nâng level lên, để cơ bắp kịp thích nghi để phát triển cân đối nhất có thể.`,
   //     },
   //     {
@@ -813,86 +745,66 @@ const newsSample: INews[] = [
   //       title: "Lưu ý dành cho người tập gym để giảm cân",
   //       image: "",
   //       content: `Người tập gym sẽ có vài lưu ý cần quan tâm để thực hiện mục đích giảm cân được dễ dàng hơn, cụ thể như sau:
-
   //       Xác định đúng mục tiêu tập luyện.
-        
   //       Sắp xếp lịch tập hợp lý.
-        
   //       Khởi động kỹ trước khi bắt đầu tập gym.
-        
   //       Chọn mức độ tập luyện vừa với thể lực.
-        
   //       Trang phục tập gym thoải mái, thoáng mát, phù hợp.
-        
   //       Chế độ ăn uống phải khoa học,...`,
   //     },
   //   ],
   // },
-//   {
-//     name: "NGƯỜI GẦY CÓ NÊN TẬP GYM KHÔNG? CÁCH TẬP GYM CHUẨN ĐỂ TĂNG CÂN",
-//     subTitle: "Rau củ quả và các loại hạt là thực phẩm rất tốt cho sức khỏe",
-//     image:
-//       "https://medlatec.vn/ImagePath/images/20201212/20201212_nguoi-gay-co-nen-tap-gym-hay-khong-la-thac-mac-cua-nhieu-nguoi.jpg",
-//     content: [
-//       {
-//         title: "Phương pháp tập gym hiệu quả để tăng cân",
-//         image: "",
-//         content: `Nếu đã biết được câu trả lời người gầy có nên tập gym thì bạn cần bỏ ra thời gian để lập một kế hoạch tập luyện cụ thể cũng như tìm hiểu tất tần tật những phương pháp để quá trình tập gym diễn ra đạt hiệu quả cao.
-//         2.1. Chọn bài tập phù hợp
-//         Trong gym có rất nhiều bài tập cho từng mục đích khác nhau, khi bắt đầu cần lựa chọn những bài tập vừa phải, không quá nhẹ cũng không quá nặng. Khi đã quen với cường độ luyện tập như thế thì bạn hãy từ từ tăng level lên, không nên quá nóng vội tránh trường hợp ảnh hưởng đến sức khỏe xương khớp và sụt cân hơn ban đầu.
-//         \n 2.2. Thực hiện động tác đúng cách
-//         Trước khi tập một động tác mới, chúng tôi khuyên bạn hãy nhờ sự hướng dẫn của các huấn luyện viên tại phòng gym để thực hiện một cách chính xác nhất. Khi tập luyện, mỗi động tác bạn nên làm dứt khoát, không ngập ngừng, phải tập thành thạo, quen dần rồi mới bắt đầu chuyển sang động tác khác.
-//         Thời gian cho một bài tập tầm 30 phút đến 1 tiếng là hợp lý, tránh tập luyện quá độ gây nên tình trạng thiếu hụt calo, giảm năng lượng hoạt động trong một ngày.
-//         Nếu sắp xếp được thì bạn nên tập luyện từ lúc 3 giờ chiều để việc tăng cân diễn ra hiệu quả hơn. (Tùy theo cách bạn tập luyện như thế nào nữa).
-//         Chú ý giãn cơ trước và sau buổi tập để giúp cơ kịp thời phục hồi, cố gắng dành ra 15 phút cho việc này.
-//         Tập luyện không bỏ ngang hoặc ngắt quãng giữa chừng. Việc bạn nghỉ ngang như vậy sẽ tạo cảm giác chán nản, dễ gây ra tình trạng bỏ tập.
-//         2.3. Chế độ bổ sung dinh dưỡng
-// Ăn uống đầy đủ dưỡng chất quyết định rất nhiều đến việc tăng cân cho người gầy. Chất dinh dưỡng giúp cơ thể hấp thu thêm nhiều năng lượng, bạn nên cung cấp nhiều đạm qua các loại thực phẩm như: ức gà, thịt bò, hải sản, trứng, rau xanh, các loại đậu,...
-// Người tập gym thường có thói quen chia thực đơn thành nhiều buổi nhỏ, việc ăn như vậy sẽ giúp quá trình tiêu hóa diễn ra tích cực hơn. Hãy quan tâm đến chế độ ăn uống của bản thân, tránh tập luyện quá độ dẫn đến mệt mỏi chán ăn, thì lúc đấy mọi công sức bạn bỏ ra đều trở nên vô nghĩa.
-// 2.4. Chế độ nghỉ ngơi khoa học
-// Một ngày quy định con người chỉ nên bỏ ra 8 tiếng để ngủ, vì việc thiếu ngủ sẽ gây mệt mỏi ảnh hưởng đến quá trình tập luyện. Bạn nên dành thời gian để nghỉ ngơi sau mỗi bài tập, điều này cải thiện rất nhiều đến kết quả bài tập.
-// 2.5. Hít thở
-// Có thể nói đây chính là yếu tố quan trọng quyết định đến hiệu quả bài tập. Phải đảm bảo rằng việc hít thở phải đúng cách, hít vào bằng mũi và thở ra bằng miệng trong suốt quá trình tập gym.`,
-//       },
-//       {
-//         title: "Người gầy tập gym sẽ mang lại hiệu quả như thế nào?",
-//         image: "",
-//         content: `Gầy khiến cơ thể bạn khi nhìn vào cảm thấy thiếu sức sống cho dù bạn có đang khỏe mạnh đến mức nào, việc tăng cân nhờ tập gym sẽ giúp bạn có cân nặng vừa ý, ngoài ra còn giúp xua tan mệt mỏi, xả stress, thải mọi độc tố trong cơ thế, giúp giấc ngủ đi sâu hơn,...
-
-//         Người gầy tập gym sẽ mang đến nhiều tác dụng tốt như:
-        
-//         Cơ hội tăng cân hiếm thấy.
-        
-//         Ăn uống ngon hơn bình thường, ngủ sâu đủ giấc.
-        
-//         Quá trình chuyển hóa chất diễn ra tốt hơn.
-        
-//         Tăng cân mà không lo dư mỡ thừa, phát béo.
-        
-//         Body dần trở nên nóng bỏng, thu hút.
-        
-//         Sức khỏe cải thiện, tràn đầy năng lượng tích cực.
-        
-//         Tinh thần lúc nào cũng thoải mái, dễ chịu, lạc quan hơn.`,
-//       },
-//       {
-//         title: "Lưu ý cho người gầy tập gym để tăng cân",
-//         image: "",
-//         content: `Trước khi tập luyện không nên nhịn đói, để bụng rỗng, hoặc ăn quá no.
-
-//         Dành ra thời gian hợp lý để nghỉ ngơi giữa các hiệp.
-        
-//         Không nên tắm ngay sau khi tập vì các tuyến mồ hôi lúc này đang diễn ra tích cực, lỗ chân lông giãn nở, việc tắm lúc cơ thể đang nóng vì đốt cháy năng lượng, khi đó nước lạnh đột ngột sẽ khiến chúng ta dễ bệnh hoặc dẫn đến đột quỵ, khuyên nên tắm bằng nước ấm để thư giãn.
-        
-//         Không nên ăn ngay sau khi tập, cơ thể mệt mỏi khiến cho thức ăn khó tiêu hơn bình thường, khuyên bạn nên nghỉ ngơi mỗi khi tập luyện xong.
-        
-//         Ngủ đầy đủ 8 tiếng mỗi ngày để có sức, đầu óc tỉnh táo.
-        
-//         Không luyện tập quá độ, xếp lịch tập một cách hợp lý, xen kẽ ngày nghỉ để cơ bắp kịp thời phục hồi và phát triển.`,
-//       },
-      
-//     ],
-//   },
+  //   {
+  //     name: "NGƯỜI GẦY CÓ NÊN TẬP GYM KHÔNG? CÁCH TẬP GYM CHUẨN ĐỂ TĂNG CÂN",
+  //     subTitle: "Rau củ quả và các loại hạt là thực phẩm rất tốt cho sức khỏe",
+  //     image:
+  //       "https://medlatec.vn/ImagePath/images/20201212/20201212_nguoi-gay-co-nen-tap-gym-hay-khong-la-thac-mac-cua-nhieu-nguoi.jpg",
+  //     content: [
+  //       {
+  //         title: "Phương pháp tập gym hiệu quả để tăng cân",
+  //         image: "",
+  //         content: `Nếu đã biết được câu trả lời người gầy có nên tập gym thì bạn cần bỏ ra thời gian để lập một kế hoạch tập luyện cụ thể cũng như tìm hiểu tất tần tật những phương pháp để quá trình tập gym diễn ra đạt hiệu quả cao.
+  //         2.1. Chọn bài tập phù hợp
+  //         Trong gym có rất nhiều bài tập cho từng mục đích khác nhau, khi bắt đầu cần lựa chọn những bài tập vừa phải, không quá nhẹ cũng không quá nặng. Khi đã quen với cường độ luyện tập như thế thì bạn hãy từ từ tăng level lên, không nên quá nóng vội tránh trường hợp ảnh hưởng đến sức khỏe xương khớp và sụt cân hơn ban đầu.
+  //         \n 2.2. Thực hiện động tác đúng cách
+  //         Trước khi tập một động tác mới, chúng tôi khuyên bạn hãy nhờ sự hướng dẫn của các huấn luyện viên tại phòng gym để thực hiện một cách chính xác nhất. Khi tập luyện, mỗi động tác bạn nên làm dứt khoát, không ngập ngừng, phải tập thành thạo, quen dần rồi mới bắt đầu chuyển sang động tác khác.
+  //         Thời gian cho một bài tập tầm 30 phút đến 1 tiếng là hợp lý, tránh tập luyện quá độ gây nên tình trạng thiếu hụt calo, giảm năng lượng hoạt động trong một ngày.
+  //         Nếu sắp xếp được thì bạn nên tập luyện từ lúc 3 giờ chiều để việc tăng cân diễn ra hiệu quả hơn. (Tùy theo cách bạn tập luyện như thế nào nữa).
+  //         Chú ý giãn cơ trước và sau buổi tập để giúp cơ kịp thời phục hồi, cố gắng dành ra 15 phút cho việc này.
+  //         Tập luyện không bỏ ngang hoặc ngắt quãng giữa chừng. Việc bạn nghỉ ngang như vậy sẽ tạo cảm giác chán nản, dễ gây ra tình trạng bỏ tập.
+  //         2.3. Chế độ bổ sung dinh dưỡng
+  // Ăn uống đầy đủ dưỡng chất quyết định rất nhiều đến việc tăng cân cho người gầy. Chất dinh dưỡng giúp cơ thể hấp thu thêm nhiều năng lượng, bạn nên cung cấp nhiều đạm qua các loại thực phẩm như: ức gà, thịt bò, hải sản, trứng, rau xanh, các loại đậu,...
+  // Người tập gym thường có thói quen chia thực đơn thành nhiều buổi nhỏ, việc ăn như vậy sẽ giúp quá trình tiêu hóa diễn ra tích cực hơn. Hãy quan tâm đến chế độ ăn uống của bản thân, tránh tập luyện quá độ dẫn đến mệt mỏi chán ăn, thì lúc đấy mọi công sức bạn bỏ ra đều trở nên vô nghĩa.
+  // 2.4. Chế độ nghỉ ngơi khoa học
+  // Một ngày quy định con người chỉ nên bỏ ra 8 tiếng để ngủ, vì việc thiếu ngủ sẽ gây mệt mỏi ảnh hưởng đến quá trình tập luyện. Bạn nên dành thời gian để nghỉ ngơi sau mỗi bài tập, điều này cải thiện rất nhiều đến kết quả bài tập.
+  // 2.5. Hít thở
+  // Có thể nói đây chính là yếu tố quan trọng quyết định đến hiệu quả bài tập. Phải đảm bảo rằng việc hít thở phải đúng cách, hít vào bằng mũi và thở ra bằng miệng trong suốt quá trình tập gym.`,
+  //       },
+  //       {
+  //         title: "Người gầy tập gym sẽ mang lại hiệu quả như thế nào?",
+  //         image: "",
+  //         content: `Gầy khiến cơ thể bạn khi nhìn vào cảm thấy thiếu sức sống cho dù bạn có đang khỏe mạnh đến mức nào, việc tăng cân nhờ tập gym sẽ giúp bạn có cân nặng vừa ý, ngoài ra còn giúp xua tan mệt mỏi, xả stress, thải mọi độc tố trong cơ thế, giúp giấc ngủ đi sâu hơn,...
+  //         Người gầy tập gym sẽ mang đến nhiều tác dụng tốt như:
+  //         Cơ hội tăng cân hiếm thấy.
+  //         Ăn uống ngon hơn bình thường, ngủ sâu đủ giấc.
+  //         Quá trình chuyển hóa chất diễn ra tốt hơn.
+  //         Tăng cân mà không lo dư mỡ thừa, phát béo.
+  //         Body dần trở nên nóng bỏng, thu hút.
+  //         Sức khỏe cải thiện, tràn đầy năng lượng tích cực.
+  //         Tinh thần lúc nào cũng thoải mái, dễ chịu, lạc quan hơn.`,
+  //       },
+  //       {
+  //         title: "Lưu ý cho người gầy tập gym để tăng cân",
+  //         image: "",
+  //         content: `Trước khi tập luyện không nên nhịn đói, để bụng rỗng, hoặc ăn quá no.
+  //         Dành ra thời gian hợp lý để nghỉ ngơi giữa các hiệp.
+  //         Không nên tắm ngay sau khi tập vì các tuyến mồ hôi lúc này đang diễn ra tích cực, lỗ chân lông giãn nở, việc tắm lúc cơ thể đang nóng vì đốt cháy năng lượng, khi đó nước lạnh đột ngột sẽ khiến chúng ta dễ bệnh hoặc dẫn đến đột quỵ, khuyên nên tắm bằng nước ấm để thư giãn.
+  //         Không nên ăn ngay sau khi tập, cơ thể mệt mỏi khiến cho thức ăn khó tiêu hơn bình thường, khuyên bạn nên nghỉ ngơi mỗi khi tập luyện xong.
+  //         Ngủ đầy đủ 8 tiếng mỗi ngày để có sức, đầu óc tỉnh táo.
+  //         Không luyện tập quá độ, xếp lịch tập một cách hợp lý, xen kẽ ngày nghỉ để cơ bắp kịp thời phục hồi và phát triển.`,
+  //       },
+  //     ],
+  //   },
 ];
 
 const uploadImage = async (uri: string) => {

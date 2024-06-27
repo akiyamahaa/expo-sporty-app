@@ -25,6 +25,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { firebaseDb } from "../firebase";
 import { setUser } from "../store/user.reducer";
 import { IUserProfile } from "../type/user";
+import ExerciseDetail from "../screens/main/exercises/ExerciseDetail";
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
@@ -86,6 +87,7 @@ const Root = () => {
               <Stack.Screen name="CreateMenu2" component={CreateMenu2} />
               <Stack.Screen name="CreateMenu" component={CreateMenu} />
               <Stack.Screen name="DailyMenu" component={DailyMenu} />
+              <Stack.Screen name="ExerciseDetail" component={ExerciseDetail} />
             </Stack.Group>
           )}
         </Stack.Navigator>

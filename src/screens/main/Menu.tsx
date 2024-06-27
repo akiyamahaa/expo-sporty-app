@@ -58,7 +58,7 @@ const Menu = (props: Props) => {
         handleAdd={handleBtnAdd}
         handleSearch={handleSearch}
       />
-      <VStack px={6} pt={8} pb={4} space={4}>
+      <VStack px={6} pt={8} space={4}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <HStack space={2}>
             {dayGroup.map((valueId, idx) => (
@@ -73,7 +73,7 @@ const Menu = (props: Props) => {
           </HStack>
         </ScrollView>
         <ScrollView>
-          <VStack flex={1} mt={4}>
+          <VStack flex={1} mt={2}>
             <MenuDayCard listSession={listSession} />
           </VStack>
         </ScrollView>

@@ -116,6 +116,10 @@ export const convertTitle = (title: string) => {
       return "Luyện tập";
     case "news":
       return "Bài viết";
+    case "ppl":
+      return "Push/Pull/Leg";
+    case "phul":
+      return "Upper/Lower";
     default:
       return "";
   }

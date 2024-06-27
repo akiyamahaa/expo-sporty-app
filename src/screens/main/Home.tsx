@@ -12,7 +12,7 @@ import { convertHeaderTitle, convertTitle } from "../../utils/forms";
 import { RootStackParams } from "../../navigations/config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { removeLoading, setLoading } from "../../store/loading.reducer";
-import { createFood } from "../../data/mockup";
+// import { createFood } from "../../data/mockup";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "TabNav"> & any;
 
@@ -21,7 +21,7 @@ const Home = (props: Props) => {
   const dispatch = useAppDispatch();
   const [list, setList] = useState<IInfo>([]);
   const [category, setCategory] = useState("foods");
-  const btnArr = ["foods", "exercises", "news"];
+  const btnArr = ["foods", "news"];
   const fetchAllFood = async (category: string) => {
     // TODO: Define type for info
     try {
@@ -46,7 +46,6 @@ const Home = (props: Props) => {
   useEffect(() => {
     fetchAllFood(category);
   }, [category]);
-
 
   return (
     <Box flex={1} bgColor={"muted.900"}>
