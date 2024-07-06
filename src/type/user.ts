@@ -8,7 +8,8 @@ export interface IUserProfile {
   password: string;
   fullname: string;
   gender: EGender;
-  height: number;
-  weight: number;
-  age: number;
+  height: string;
+  weight: string;
+  age: string;
+  calo?: string;
 }

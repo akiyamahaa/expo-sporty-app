@@ -58,9 +58,12 @@ const Menu = (props: Props) => {
         handleAdd={handleBtnAdd}
         handleSearch={handleSearch}
       />
-      <VStack px={6} pt={8} space={4}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <HStack space={2}>
+      <VStack flex={1} px={6} py={4} space={4}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        >
+          <HStack height={12} space={2}>
             {dayGroup.map((valueId, idx) => (
               <Box width={20} key={`${valueId}-${idx}`}>
                 <CustomButton

@@ -74,7 +74,7 @@ const Setting = (props: Props) => {
           <SettingPart
             type="profile"
             handleBtn={() => {
-              navigation.goBack();
+              navigation.navigate("BMI");
             }}
           />
           <SettingPart
