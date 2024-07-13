@@ -12,7 +12,7 @@ import CustomButton from "../../components/CustomButton";
 import { RootStackParams } from "../../navigations/config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useAppDispatch } from "../../store";
+import { RootState, useAppDispatch, useAppSelector } from "../../store";
 import { removeUser } from "../../store/user.reducer";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "Setting">;
@@ -25,6 +25,7 @@ type PartProps = {
 const SettingPart = (props: PartProps) => {
   const { colors } = useTheme();
   const { type, handleSwitchBtn, handleBtn } = props;
+
   let IconTag, text;
   if (type == "notice") {
     text = "Thông báo";
@@ -58,6 +59,7 @@ const SettingPart = (props: PartProps) => {
 
 const Setting = (props: Props) => {
   const { navigation } = props;
+  const user = useAppSelector((state: RootState) => state.user.user);
   const handleSetting = () => {};
   const dispatch = useAppDispatch();
 
@@ -67,7 +69,7 @@ const Setting = (props: Props) => {
   };
   return (
     <Box flex={1} bgColor={"muted.900"}>
-      <Header.HomeHeader handleSetting={handleSetting} />
+      <Header.HomeHeader handleSetting={handleSetting} name={user?.fullname || 'No Name'} />
       <VStack flex={1} px={6} py={8} justifyContent={"space-between"}>
         <VStack space={6}>
           <SettingPart type="notice" />

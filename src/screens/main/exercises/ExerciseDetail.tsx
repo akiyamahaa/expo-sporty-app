@@ -92,7 +92,7 @@ const ExerciseDetail = ({ navigation, route }: Props) => {
                         </Box>
                       </TouchableOpacity>
                       {/* Content */}
-                      {hiddenParts[
+                      {!hiddenParts[
                         `${exercise.id}-${exerciseMuscle.title}`
                       ] && (
                         <VStack space="2">

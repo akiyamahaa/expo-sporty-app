@@ -60,10 +60,12 @@ const Menu = (props: Props) => {
       />
       <VStack flex={1} px={6} py={4} space={4}>
         <ScrollView
+          maxHeight={"12"}
+          minHeight={"12"}
           horizontal
           showsHorizontalScrollIndicator={false}
         >
-          <HStack height={12} space={2}>
+          <HStack space={2} maxHeight={"12"} minHeight={"12"}>
             {dayGroup.map((valueId, idx) => (
               <Box width={20} key={`${valueId}-${idx}`}>
                 <CustomButton
@@ -76,7 +78,7 @@ const Menu = (props: Props) => {
           </HStack>
         </ScrollView>
         <ScrollView>
-          <VStack flex={1} mt={2}>
+          <VStack flex={1} justifyContent={"flex-start"}>
             <MenuDayCard listSession={listSession} />
           </VStack>
         </ScrollView>

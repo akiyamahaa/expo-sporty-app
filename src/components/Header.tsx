@@ -3,15 +3,18 @@ import React from "react";
 import { Box, HStack, Icon, Input, Text, useTheme } from "native-base";
 import { Add, ArrowLeft2, SearchNormal, Setting2 } from "iconsax-react-native";
 import { RootState, useAppSelector } from "../store";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeHeader = ({ name = "Jack 5M", handleSetting = null }: any) => {
- 
+  const navigation = useNavigation<any>();
   return (
     <Box bgColor={"muted.800"} px={4} py={2}>
       <HStack alignItems={"center"} justifyContent={"space-between"}>
-        <Text fontSize={16} fontWeight={500}>
-          Hi, {name}
-        </Text>
+        <TouchableOpacity onPress={() => navigation.navigate("TabNav")}>
+          <Text fontSize={16} fontWeight={500}>
+            Hi, {name}
+          </Text>
+        </TouchableOpacity>
         {handleSetting && (
           <Box>
             <TouchableOpacity onPress={handleSetting}>

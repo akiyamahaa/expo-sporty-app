@@ -20,8 +20,11 @@ import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../navigations/config";
 import { createExercise, createFood, createNews } from "../../data/mockup";
+import { getOneDocument } from "../../firebase/api";
+import { setUser } from "../../store/user.reducer";
 // import { createExercise, createNews } from "../../data/mockup";
 
+// ** Component **
 type BoxCaloriesProps = {
   type: "take" | "required";
   value: number;
@@ -131,6 +134,13 @@ const Profile = (props: Props) => {
         dispatch(removeLoading());
       }
     };
+    const getUserProfile = async () => {
+      const userInfo: any = await getOneDocument("users", user?.phone!);
+      if (userInfo) {
+        dispatch(setUser(userInfo));
+      }
+    };
+    getUserProfile();
     handleGetFoodSession();
   }, [isFocused]);
 
@@ -200,7 +210,7 @@ const Profile = (props: Props) => {
           </HStack>
           <Box bgColor={"muted.800"} borderRadius={16}>
             <VStack p={6} space={6}>
-              <HStack>
+              <HStack justifyContent={"space-between"}>
                 <Box>
                   <Text fontWeight={400} fontSize={16}>
                     BMI
@@ -209,7 +219,14 @@ const Profile = (props: Props) => {
                     {bmi}
                   </Text>
                 </Box>
-                {/* TODO: update BMI Btn */}
+                <Box>
+                  <Text fontWeight={400} fontSize={16}>
+                    Calories Target
+                  </Text>
+                  <Text fontWeight={700} fontSize={30} color="primary.600">
+                    {user?.calo || 0} kcal
+                  </Text>
+                </Box>
               </HStack>
               <Divider bgColor={"muted.900"} />
               <HStack justifyContent={"space-between"}>

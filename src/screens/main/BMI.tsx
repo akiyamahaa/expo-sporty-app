@@ -7,15 +7,12 @@ import PickGender from "../../components/PickGender";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../navigations/config";
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
-import { doc, updateDoc } from "firebase/firestore";
-import { firebaseDb } from "../../firebase";
-import { setUser } from "../../store/user.reducer";
+import { updateDocument } from "../../firebase/api";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "BMI">;
 
 const BMI = ({ navigation }: Props) => {
   const user = useAppSelector((state: RootState) => state.user.user);
-  const dispatch = useAppDispatch();
   const [gender, setGender] = useState(user?.gender);
   const [height, setHeight] = useState(user?.height);
   const [weight, setWeight] = useState(user?.weight);
@@ -28,15 +25,14 @@ const BMI = ({ navigation }: Props) => {
   const handleDone = async () => {
     if (user) {
       const newUser: any = {
-        ...user,
         age: age,
         gender: gender,
         height: height,
         weight: weight,
         calo: calo,
       };
-      await updateDoc(doc(firebaseDb, "users", user.phone), newUser);
-      await dispatch(setUser(newUser));
+      await updateDocument("users", user.phone, newUser);
+
       navigation.goBack();
     }
   };

@@ -1,5 +1,5 @@
 import { Box, NativeBaseProvider } from "native-base";
-import { StyleSheet, Text, View } from "react-native";
+import { LogBox, StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
 import * as SplashScreen from "expo-splash-screen";
 import store from "./src/store";
@@ -39,6 +39,12 @@ export default function App() {
     Roboto_900Black,
     Roboto_900Black_Italic,
   });
+
+  useEffect(() => {
+    LogBox.ignoreLogs([
+      "In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app.",
+    ]);
+  }, []);
 
   useEffect(() => {
     if (fontsLoaded) {

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
-import { Box, Text, VStack } from "native-base";
+import { Box, ScrollView, Text, VStack } from "native-base";
 import Header from "../../components/Header";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../navigations/config";
@@ -11,6 +11,7 @@ import { firebaseDb } from "../../firebase";
 import { IFood, ISession } from "../../type/common";
 import MenuDayCard from "../../components/MenuDayCard";
 import { getCurrentDate } from "../../utils/forms";
+import { getOneDocument } from "../../firebase/api";
 
 type Props = {} & NativeStackScreenProps<RootStackParams, "DailyMenu">;
 
@@ -25,10 +26,9 @@ const DailyMenu = (props: Props) => {
   const handleGetDailyMenu = async () => {
     try {
       dispatch(setLoading());
-      const docRef = doc(firebaseDb, "daily", date);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setListSession(docSnap.data());
+      const dailyMeunu = await getOneDocument("daily", date);
+      if (dailyMeunu) {
+        setListSession(dailyMeunu);
       }
     } catch (err) {
       console.log(err);
@@ -47,16 +47,18 @@ const DailyMenu = (props: Props) => {
         title="Thực đơn trong ngày"
         handleBtnBack={() => navigation.goBack()}
       />
-      <VStack
-        flex={1}
-        px={6}
-        pt={8}
-        pb={20}
-        space={4}
-        justifyContent={"space-between"}
-      >
-        <MenuDayCard listSession={listSession} isUpdateDaily={true} />
-      </VStack>
+      <ScrollView>
+        <VStack
+          flex={1}
+          px={6}
+          pt={8}
+          pb={20}
+          space={4}
+          justifyContent={"space-between"}
+        >
+          <MenuDayCard listSession={listSession} isUpdateDaily={true} />
+        </VStack>
+      </ScrollView>
     </Box>
   );
 };
