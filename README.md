@@ -7,7 +7,6 @@
 
 ## Table of Contents
 - [Template Code Base](#template-code-base)
-  - [Upgrade version](#upgrade-version)
   - [Logo](#logo)
   - [Demo App](#demo-app)
   - [Table of Contents](#table-of-contents)
@@ -26,6 +25,15 @@
 
 ## Screenshots
 <!-- Screenshot image of some screen and place in ~/images folder from root app -->
+<div>
+<img src="images/image_demo1.png" width="40%" style="inline-block" alt='screen1'>
+<img src="images/image_demo2.png" width="40%" style="inline-block" alt='screen2'>
+<img src="images/image_demo3.png" width="40%" style="inline-block" alt='screen3'>
+<img src="images/image_demo4.png" width="40%" style="inline-block" alt='screen4'>
+<img src="images/image_demo5.png" width="40%" style="inline-block" alt='screen5'>
+<img src="images/image_demo6.png" width="40%" style="inline-block" alt='screen6'>
+<img src="images/image_demo7.png" width="40%" style="inline-block" alt='screen6'>
+</div>
 
 ## Getting Started
 
