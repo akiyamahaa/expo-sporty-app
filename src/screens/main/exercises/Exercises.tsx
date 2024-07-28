@@ -55,6 +55,7 @@ const Exercises = ({ navigation }: Props) => {
                     exerciseId: exerciseData.id,
                   });
                 }}
+                disabled={exerciseData.muscle_groups.length <= 0}
               >
                 <ExerciseCard data={exerciseData} />
               </TouchableOpacity>

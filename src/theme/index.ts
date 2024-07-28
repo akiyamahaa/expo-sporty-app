@@ -6,7 +6,7 @@ import { extendTheme } from "native-base";
 
 export const newColorTheme = {
   primary: {
-    600: "#E6F853",
+    600: "#1AD1BD",
   },
   muted: {
     400: "#A3A3A3",
@@ -21,9 +21,9 @@ export const newColorTheme = {
   error: {
     600: "#DC2626",
   },
-  background:{
-    primary:'#171717'
-  }
+  background: {
+    primary: "#171717",
+  },
 };
 
 const appTheme = extendTheme({
