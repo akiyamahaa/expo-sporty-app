@@ -1,7 +1,5 @@
-# Template Code Base
+# FitStart
 
-## Logo
-<!-- LOGO App here -->
 ## Demo App
 <!-- Link Vid Demo -->
 
